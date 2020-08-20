@@ -75,6 +75,7 @@ namespace HMS_Desktop_Mgr
             }
         }
 
+        //NOTE: The code below is still in development. This code will not work properly at this time.
 
         private string getData()
         {
@@ -97,9 +98,11 @@ namespace HMS_Desktop_Mgr
                 rbStreamflow.geometry.hucID = Convert.ToString(txtCOMIDandHucID.Text);
             }
 
+            rbStreamflow.runoffSource = ddlAlgorithm.SelectedItem.ToString();
+
             if (ddlAlgorithm.SelectedValue.ToString() != "curvenumber")
             {
-                rbStreamflow.runoffSource = ddlAlgorithm.SelectedItem.ToString();
+                rbStreamflow.source = null;
             }
             else
             {
