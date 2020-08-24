@@ -34,10 +34,10 @@ namespace HMS_Desktop_Mgr
         public enum StreamHydrologyAlgorithms { constant,changing,kinematic }
 
         //Development Server
-        //public static string baseURL = @"https://ceamdev.ceeopdev.net/hms/rest/api/";
+        public static string baseURL = @"https://ceamdev.ceeopdev.net/hms/rest/api/";
 
         //Staging Server 
-        public static string baseURL = @"https://ceamstg.ceeopdev.net/hms/rest/api/";
+        //public static string baseURL = @"https://ceamstg.ceeopdev.net/hms/rest/api/";
 
         public static string precipitaionURL = @"meteorology/precipitation/";
         public static string temperatureURL = @"hydrology/temperature/";
