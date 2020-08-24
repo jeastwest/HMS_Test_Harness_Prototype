@@ -11,11 +11,5 @@ namespace HMS_Desktop_Mgr
         public string runoffSource { get; set; } = null;
         public string streamHydrology { get; set; } = null;
         public bool aggregation { get; set; } = false;
-        public geometryMeta geometryMetadata { get; set; } = new geometryMeta();
-    }
-
-    class geometryMeta
-    {
-        public string precipSource { get; set; } = null;
     }
 }

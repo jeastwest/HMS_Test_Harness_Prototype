@@ -68,7 +68,7 @@
             // lnkStreamflow
             // 
             this.lnkStreamflow.AutoSize = true;
-            this.lnkStreamflow.Location = new System.Drawing.Point(194, 177);
+            this.lnkStreamflow.Location = new System.Drawing.Point(194, 171);
             this.lnkStreamflow.Name = "lnkStreamflow";
             this.lnkStreamflow.Size = new System.Drawing.Size(89, 20);
             this.lnkStreamflow.TabIndex = 3;

@@ -61,13 +61,14 @@ namespace HMS_Desktop_Mgr
             rbPrecipExtract.geometry.timezone = null;
 
 
-            //ncei selection
+            //Geometry class parameters added to request body
             rbPrecipExtract.geometry.description = "StationID";
             rbPrecipExtract.geometry.comID = 0;
             rbPrecipExtract.geometry.point.latitude = 0;
             rbPrecipExtract.geometry.point.longitude = 0;
             rbPrecipExtract.geometry.stationID = txtStationID.Text;
             rbPrecipExtract.geometry.hucID = null;
+
 
             rbPrecipExtract.dataValueFormat = "E3";
             rbPrecipExtract.temporalResolution = ddlTemporalResolution.SelectedItem.ToString();

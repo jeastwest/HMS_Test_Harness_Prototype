@@ -42,7 +42,7 @@ namespace HMS_Desktop_Mgr
         public string hucID { get; set; } = null;
         public string stationID { get; set; } = null;
         public Point point { get; set; } = new Point();
-        public string geometryMetadata { get; set; } = null;
+        public geometryMetaData geometryMetadata { get; set; } = new geometryMetaData();
         public string timezone { get; set; } = null;
     }
 
@@ -51,7 +51,11 @@ namespace HMS_Desktop_Mgr
         public double latitude { get; set; } = 0.0;
         public double longitude { get; set; } = 0.0;
     }
-    
+
+    class geometryMetaData
+    {
+        public string precipSource { get; set; } = null;
+    }
 }
 
 

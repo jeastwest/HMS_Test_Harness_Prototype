@@ -52,8 +52,8 @@
             this.lblUnformattedOutput = new System.Windows.Forms.Label();
             this.btnSubmitStreamflow = new System.Windows.Forms.Button();
             this.pnlStreamHydrologyAlgorithm = new System.Windows.Forms.Panel();
-            this.lblStreamHydrologyAlgorithm = new System.Windows.Forms.Label();
             this.ddlStreamHydrologyAlgorithm = new System.Windows.Forms.ComboBox();
+            this.lblStreamHydrologyAlgorithm = new System.Windows.Forms.Label();
             this.pnlAlgorithm.SuspendLayout();
             this.pnlTemporalResolution.SuspendLayout();
             this.pnlTimeSpan.SuspendLayout();
@@ -286,6 +286,14 @@
             this.pnlStreamHydrologyAlgorithm.Size = new System.Drawing.Size(235, 78);
             this.pnlStreamHydrologyAlgorithm.TabIndex = 45;
             // 
+            // ddlStreamHydrologyAlgorithm
+            // 
+            this.ddlStreamHydrologyAlgorithm.FormattingEnabled = true;
+            this.ddlStreamHydrologyAlgorithm.Location = new System.Drawing.Point(14, 38);
+            this.ddlStreamHydrologyAlgorithm.Name = "ddlStreamHydrologyAlgorithm";
+            this.ddlStreamHydrologyAlgorithm.Size = new System.Drawing.Size(202, 28);
+            this.ddlStreamHydrologyAlgorithm.TabIndex = 1;
+            // 
             // lblStreamHydrologyAlgorithm
             // 
             this.lblStreamHydrologyAlgorithm.AutoSize = true;
@@ -294,14 +302,6 @@
             this.lblStreamHydrologyAlgorithm.Size = new System.Drawing.Size(206, 20);
             this.lblStreamHydrologyAlgorithm.TabIndex = 0;
             this.lblStreamHydrologyAlgorithm.Text = "Stream Hydrology Algorithm";
-            // 
-            // ddlStreamHydrologyAlgorithm
-            // 
-            this.ddlStreamHydrologyAlgorithm.FormattingEnabled = true;
-            this.ddlStreamHydrologyAlgorithm.Location = new System.Drawing.Point(14, 38);
-            this.ddlStreamHydrologyAlgorithm.Name = "ddlStreamHydrologyAlgorithm";
-            this.ddlStreamHydrologyAlgorithm.Size = new System.Drawing.Size(202, 28);
-            this.ddlStreamHydrologyAlgorithm.TabIndex = 1;
             // 
             // Streamflow
             // 

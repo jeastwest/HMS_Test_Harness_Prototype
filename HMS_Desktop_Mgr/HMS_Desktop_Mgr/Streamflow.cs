@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +25,7 @@ namespace HMS_Desktop_Mgr
             ddlAOI.DataSource = Enum.GetValues(typeof(Globals.streamflowAOI));
             ddlAlgorithm.DataSource = Enum.GetValues(typeof(Globals.runoffAndFlowAlgorithms));
             pnlPrecipSource.Visible = false;
+            ddlPrecipSource.DataSource = Enum.GetValues(typeof(Globals.streamflowPrecipSources));
             ddlTemporalResolution.DataSource = Enum.GetValues(typeof(Globals.TemporalResultionDaily));
             ddlStreamHydrologyAlgorithm.DataSource = Enum.GetValues(typeof(Globals.StreamHydrologyAlgorithms));
         }
@@ -75,8 +79,6 @@ namespace HMS_Desktop_Mgr
             }
         }
 
-        //NOTE: The code below is still in development. This code will not work properly at this time.
-
         private string getData()
         {
             string URL = Globals.baseURL + Globals.streamflowURL;
@@ -87,6 +89,8 @@ namespace HMS_Desktop_Mgr
 
             rbStreamflow.geometry.description = null;
             rbStreamflow.geometry.timezone = null;
+
+            rbStreamflow.aggregation = false;
             if (ddlAOI.SelectedItem.ToString() == "COMID")
             {
                 rbStreamflow.geometry.hucID = null;
@@ -103,16 +107,44 @@ namespace HMS_Desktop_Mgr
             if (ddlAlgorithm.SelectedValue.ToString() != "curvenumber")
             {
                 rbStreamflow.source = null;
+                rbStreamflow.geometry.geometryMetadata.precipSource = null;
             }
             else
             {
-                rbStreamflow.source = ddlAlgorithm.SelectedItem.ToString();
-                rbStreamflow.geometryMetadata.precipSource = ddlPrecipSource.SelectedItem.ToString();
+                rbStreamflow.geometry.geometryMetadata.precipSource = ddlPrecipSource.SelectedItem.ToString();
             }
-            //filler code DELETE
-            return URL;
+
+            rbStreamflow.streamHydrology = ddlStreamHydrologyAlgorithm.SelectedItem.ToString();
+
+            rbStreamflow.dataValueFormat = "E3";
+            rbStreamflow.temporalResolution = "default";
+            rbStreamflow.timeLocalized = true;
+            rbStreamflow.units = "default";
+            rbStreamflow.outputFormat = "json";
+            rbStreamflow.baseURL = null;
+            rbStreamflow.inputTimeSeries = null;
+
+
+            string myJson = JsonConvert.SerializeObject(rbStreamflow);
+
+            var request = (HttpWebRequest)WebRequest.Create(URL);
+            request.Headers.Clear();
+            request.Method = "POST";
+            request.ContentType = @"application/json";
+            request.Accept = @"*/*";
+            rTxtRequestBody.Text = myJson.ToString();
+
+            var data = Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(rbStreamflow));
+            request.ContentLength = data.Length;
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            rTxtUnformattedOutput.Text = responseString;
+
+            return responseString;
         }
-
-
     }
 }

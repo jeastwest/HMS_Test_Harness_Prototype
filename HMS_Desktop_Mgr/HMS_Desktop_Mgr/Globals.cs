@@ -17,6 +17,7 @@ namespace HMS_Desktop_Mgr
         public enum pointAndCOMIDAOI { LatitudeLongitude,COMID }
         public enum streamflowAOI { COMID,HucID }
         public enum precipSources { nldas,gldas,daymet,wgen,prism,ncei,trmm }
+        public enum streamflowPrecipSources { nldas,gldas,daymet,prism }
         public enum temperatureSources { nldas,gldas,daymet,prism,ncei }
         public enum relHumiditySources { prism }
         public enum solarRadiationSources { nldas,gldas,daymet }
@@ -33,9 +34,10 @@ namespace HMS_Desktop_Mgr
         public enum StreamHydrologyAlgorithms { constant,changing,kinematic }
 
         //Development Server
-        public static string baseURL = @"https://ceamdev.ceeopdev.net/hms/rest/api/";
+        //public static string baseURL = @"https://ceamdev.ceeopdev.net/hms/rest/api/";
+
         //Staging Server 
-        //public static string baseURL = @"https://ceamstg.ceeopdev.net/hms/rest/api/";
+        public static string baseURL = @"https://ceamstg.ceeopdev.net/hms/rest/api/";
 
         public static string precipitaionURL = @"meteorology/precipitation/";
         public static string temperatureURL = @"hydrology/temperature/";
@@ -49,5 +51,6 @@ namespace HMS_Desktop_Mgr
         public static string evapotranspirationURL = @"hydrology/evapotranspiration/";
         public static string precipExtractURL = @"workflow/precip_data_extraction/";
         public static string streamflowURL = @"workflow/watershed/";
+        public static string precipCompareURL = @"workflow/precip_compare/";
     }
 }
