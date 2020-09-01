@@ -28,6 +28,7 @@ namespace HMS_Desktop_Mgr
             ddlPrecipSource.DataSource = Enum.GetValues(typeof(Globals.streamflowPrecipSources));
             ddlTemporalResolution.DataSource = Enum.GetValues(typeof(Globals.TemporalResultionDaily));
             ddlStreamHydrologyAlgorithm.DataSource = Enum.GetValues(typeof(Globals.StreamHydrologyAlgorithms));
+            lblWarning.Visible = false;
         }
 
         private void ddlAlgorithm_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,6 +146,31 @@ namespace HMS_Desktop_Mgr
             rTxtUnformattedOutput.Text = responseString;
 
             return responseString;
+        }
+        private void btnSaveInputData_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
+                myStream.WriteLine(rTxtRequestBody.Text);
+                myStream.Close();
+            }
+        }
+
+        private void btnSaveMetaData_Click(object sender, EventArgs e)
+        {
+            lblWarning.Visible = true;
+        }
+
+        private void btnSaveData_Click(object sender, EventArgs e)
+        {
+            lblWarning.Visible = true;
         }
     }
 }

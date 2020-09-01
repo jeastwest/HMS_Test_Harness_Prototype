@@ -64,11 +64,16 @@
             this.lblUnformattedOutput = new System.Windows.Forms.Label();
             this.lblRequestBody = new System.Windows.Forms.Label();
             this.btnSubmitPrecipExtract = new System.Windows.Forms.Button();
-            this.lblWarning = new System.Windows.Forms.Label();
+            this.dgvOutputs = new System.Windows.Forms.DataGridView();
+            this.lblDataTable = new System.Windows.Forms.Label();
+            this.btnSaveMetaData = new System.Windows.Forms.Button();
+            this.btnSaveInputData = new System.Windows.Forms.Button();
+            this.btnSaveData = new System.Windows.Forms.Button();
             this.pnlLocation.SuspendLayout();
             this.pnlStationID.SuspendLayout();
             this.pnlTemporal.SuspendLayout();
             this.pnlDataSources.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutputs)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNHDplusCOMID
@@ -85,6 +90,7 @@
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
+            this.lblLocation.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblLocation.Location = new System.Drawing.Point(184, 0);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(70, 20);
@@ -93,6 +99,7 @@
             // 
             // pnlLocation
             // 
+            this.pnlLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlLocation.Controls.Add(this.pnlStationID);
             this.pnlLocation.Controls.Add(this.chkNCEIStationID);
             this.pnlLocation.Controls.Add(this.chkSpatialAverage);
@@ -182,6 +189,7 @@
             // 
             // pnlTemporal
             // 
+            this.pnlTemporal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTemporal.Controls.Add(this.txtDailyPrecipThreshold);
             this.pnlTemporal.Controls.Add(this.txtTotalPrecip);
             this.pnlTemporal.Controls.Add(this.lblDailyPrecipThreshold);
@@ -325,6 +333,7 @@
             // lblTemporal
             // 
             this.lblTemporal.AutoSize = true;
+            this.lblTemporal.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblTemporal.Location = new System.Drawing.Point(184, 0);
             this.lblTemporal.Name = "lblTemporal";
             this.lblTemporal.Size = new System.Drawing.Size(75, 20);
@@ -333,20 +342,19 @@
             // 
             // pnlDataSources
             // 
-            this.pnlDataSources.Controls.Add(this.lblWarning);
+            this.pnlDataSources.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDataSources.Controls.Add(this.cBoxTRMM);
             this.pnlDataSources.Controls.Add(this.cBoxGLDAS);
             this.pnlDataSources.Controls.Add(this.cBoxNLDAS);
-            this.pnlDataSources.Controls.Add(this.lblDataSources);
             this.pnlDataSources.Location = new System.Drawing.Point(29, 585);
             this.pnlDataSources.Name = "pnlDataSources";
-            this.pnlDataSources.Size = new System.Drawing.Size(447, 81);
+            this.pnlDataSources.Size = new System.Drawing.Size(447, 60);
             this.pnlDataSources.TabIndex = 4;
             // 
             // cBoxTRMM
             // 
             this.cBoxTRMM.AutoSize = true;
-            this.cBoxTRMM.Location = new System.Drawing.Point(302, 38);
+            this.cBoxTRMM.Location = new System.Drawing.Point(312, 23);
             this.cBoxTRMM.Name = "cBoxTRMM";
             this.cBoxTRMM.Size = new System.Drawing.Size(82, 24);
             this.cBoxTRMM.TabIndex = 4;
@@ -356,7 +364,7 @@
             // cBoxGLDAS
             // 
             this.cBoxGLDAS.AutoSize = true;
-            this.cBoxGLDAS.Location = new System.Drawing.Point(165, 38);
+            this.cBoxGLDAS.Location = new System.Drawing.Point(173, 23);
             this.cBoxGLDAS.Name = "cBoxGLDAS";
             this.cBoxGLDAS.Size = new System.Drawing.Size(91, 24);
             this.cBoxGLDAS.TabIndex = 3;
@@ -366,7 +374,7 @@
             // cBoxNLDAS
             // 
             this.cBoxNLDAS.AutoSize = true;
-            this.cBoxNLDAS.Location = new System.Drawing.Point(30, 38);
+            this.cBoxNLDAS.Location = new System.Drawing.Point(21, 23);
             this.cBoxNLDAS.Name = "cBoxNLDAS";
             this.cBoxNLDAS.Size = new System.Drawing.Size(89, 24);
             this.cBoxNLDAS.TabIndex = 2;
@@ -376,7 +384,8 @@
             // lblDataSources
             // 
             this.lblDataSources.AutoSize = true;
-            this.lblDataSources.Location = new System.Drawing.Point(178, -3);
+            this.lblDataSources.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblDataSources.Location = new System.Drawing.Point(198, 582);
             this.lblDataSources.Name = "lblDataSources";
             this.lblDataSources.Size = new System.Drawing.Size(107, 20);
             this.lblDataSources.TabIndex = 1;
@@ -386,22 +395,22 @@
             // 
             this.rTxtRequestBody.Location = new System.Drawing.Point(520, 34);
             this.rTxtRequestBody.Name = "rTxtRequestBody";
-            this.rTxtRequestBody.Size = new System.Drawing.Size(477, 248);
+            this.rTxtRequestBody.Size = new System.Drawing.Size(431, 201);
             this.rTxtRequestBody.TabIndex = 5;
             this.rTxtRequestBody.Text = "";
             // 
             // rTxtUnformattedOutput
             // 
-            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(520, 327);
+            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(974, 34);
             this.rTxtUnformattedOutput.Name = "rTxtUnformattedOutput";
-            this.rTxtUnformattedOutput.Size = new System.Drawing.Size(477, 230);
+            this.rTxtUnformattedOutput.Size = new System.Drawing.Size(428, 201);
             this.rTxtUnformattedOutput.TabIndex = 6;
             this.rTxtUnformattedOutput.Text = "";
             // 
             // lblUnformattedOutput
             // 
             this.lblUnformattedOutput.AutoSize = true;
-            this.lblUnformattedOutput.Location = new System.Drawing.Point(690, 317);
+            this.lblUnformattedOutput.Location = new System.Drawing.Point(1122, 24);
             this.lblUnformattedOutput.Name = "lblUnformattedOutput";
             this.lblUnformattedOutput.Size = new System.Drawing.Size(152, 20);
             this.lblUnformattedOutput.TabIndex = 7;
@@ -410,7 +419,7 @@
             // lblRequestBody
             // 
             this.lblRequestBody.AutoSize = true;
-            this.lblRequestBody.Location = new System.Drawing.Point(706, 24);
+            this.lblRequestBody.Location = new System.Drawing.Point(677, 24);
             this.lblRequestBody.Name = "lblRequestBody";
             this.lblRequestBody.Size = new System.Drawing.Size(110, 20);
             this.lblRequestBody.TabIndex = 8;
@@ -419,30 +428,78 @@
             // btnSubmitPrecipExtract
             // 
             this.btnSubmitPrecipExtract.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSubmitPrecipExtract.Location = new System.Drawing.Point(194, 685);
+            this.btnSubmitPrecipExtract.Location = new System.Drawing.Point(152, 695);
             this.btnSubmitPrecipExtract.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmitPrecipExtract.Name = "btnSubmitPrecipExtract";
-            this.btnSubmitPrecipExtract.Size = new System.Drawing.Size(120, 39);
+            this.btnSubmitPrecipExtract.Size = new System.Drawing.Size(177, 39);
             this.btnSubmitPrecipExtract.TabIndex = 13;
-            this.btnSubmitPrecipExtract.Text = "Submit";
+            this.btnSubmitPrecipExtract.Text = "Submit Request";
             this.btnSubmitPrecipExtract.UseVisualStyleBackColor = false;
             this.btnSubmitPrecipExtract.Click += new System.EventHandler(this.btnSubmitPrecipExtract_Click);
             // 
-            // lblWarning
+            // dgvOutputs
             // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblWarning.Location = new System.Drawing.Point(14, 17);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(411, 20);
-            this.lblWarning.TabIndex = 14;
-            this.lblWarning.Text = "NOTE: Only one data source can be selected at this time!";
+            this.dgvOutputs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOutputs.Location = new System.Drawing.Point(520, 273);
+            this.dgvOutputs.Name = "dgvOutputs";
+            this.dgvOutputs.RowHeadersWidth = 62;
+            this.dgvOutputs.RowTemplate.Height = 28;
+            this.dgvOutputs.Size = new System.Drawing.Size(628, 490);
+            this.dgvOutputs.TabIndex = 14;
+            // 
+            // lblDataTable
+            // 
+            this.lblDataTable.AutoSize = true;
+            this.lblDataTable.Location = new System.Drawing.Point(770, 262);
+            this.lblDataTable.Name = "lblDataTable";
+            this.lblDataTable.Size = new System.Drawing.Size(87, 20);
+            this.lblDataTable.TabIndex = 15;
+            this.lblDataTable.Text = "Data Table";
+            // 
+            // btnSaveMetaData
+            // 
+            this.btnSaveMetaData.Location = new System.Drawing.Point(1200, 491);
+            this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveMetaData.Name = "btnSaveMetaData";
+            this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
+            this.btnSaveMetaData.TabIndex = 31;
+            this.btnSaveMetaData.Text = "Save Meta Data";
+            this.btnSaveMetaData.UseVisualStyleBackColor = true;
+            this.btnSaveMetaData.Click += new System.EventHandler(this.btnSaveMetaData_Click);
+            // 
+            // btnSaveInputData
+            // 
+            this.btnSaveInputData.Location = new System.Drawing.Point(1200, 407);
+            this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveInputData.Name = "btnSaveInputData";
+            this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
+            this.btnSaveInputData.TabIndex = 30;
+            this.btnSaveInputData.Text = "Save Input Data";
+            this.btnSaveInputData.UseVisualStyleBackColor = true;
+            this.btnSaveInputData.Click += new System.EventHandler(this.btnSaveInputData_Click);
+            // 
+            // btnSaveData
+            // 
+            this.btnSaveData.Location = new System.Drawing.Point(1200, 582);
+            this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveData.Name = "btnSaveData";
+            this.btnSaveData.Size = new System.Drawing.Size(184, 45);
+            this.btnSaveData.TabIndex = 29;
+            this.btnSaveData.Text = "Save Data";
+            this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
             // PrecipitationComparison
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 775);
+            this.ClientSize = new System.Drawing.Size(1486, 775);
+            this.Controls.Add(this.btnSaveMetaData);
+            this.Controls.Add(this.btnSaveInputData);
+            this.Controls.Add(this.lblDataSources);
+            this.Controls.Add(this.btnSaveData);
+            this.Controls.Add(this.lblDataTable);
+            this.Controls.Add(this.dgvOutputs);
             this.Controls.Add(this.btnSubmitPrecipExtract);
             this.Controls.Add(this.lblRequestBody);
             this.Controls.Add(this.lblUnformattedOutput);
@@ -463,6 +520,7 @@
             this.pnlTemporal.PerformLayout();
             this.pnlDataSources.ResumeLayout(false);
             this.pnlDataSources.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutputs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,6 +564,10 @@
         private System.Windows.Forms.Label lblUnformattedOutput;
         private System.Windows.Forms.Label lblRequestBody;
         private System.Windows.Forms.Button btnSubmitPrecipExtract;
-        private System.Windows.Forms.Label lblWarning;
+        private System.Windows.Forms.DataGridView dgvOutputs;
+        private System.Windows.Forms.Label lblDataTable;
+        private System.Windows.Forms.Button btnSaveMetaData;
+        private System.Windows.Forms.Button btnSaveInputData;
+        private System.Windows.Forms.Button btnSaveData;
     }
 }

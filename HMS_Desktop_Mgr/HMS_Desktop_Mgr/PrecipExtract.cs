@@ -17,6 +17,7 @@ namespace HMS_Desktop_Mgr
 {
     public partial class PrecipExtract : Form
     {
+        List<string> metaDataForExport = new List<string>();
         public PrecipExtract()
         {
             InitializeComponent();
@@ -111,6 +112,7 @@ namespace HMS_Desktop_Mgr
             foreach (JToken mLabel in metaItems)
             {
                 DataRow dr = dtMetaData.NewRow();
+                metaDataForExport.Add(mLabel.ToString());
                 mLabel.ToObject<JProperty>();
                 string item = mLabel.ToObject<JProperty>().Name;
                 System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex("column_[1-9]");
@@ -154,6 +156,87 @@ namespace HMS_Desktop_Mgr
             dgvPrecipExtractOutputs.DataSource = dt.DefaultView;
 
             return responseString;
+        }
+
+        private void btnSaveInputData_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
+                myStream.WriteLine(rTxtRequestBody.Text);
+                myStream.Close();
+            }
+        }
+
+        private void btnSaveMetaData_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
+                for (int i = 0; i < metaDataForExport.Count; i++)
+                {
+                    string str = metaDataForExport[i].ToString().Replace('"', '\0');
+                    int idx = str.IndexOf(":");
+                    str = str.Remove(idx, 1).Insert(idx, ",");
+                    // Code to write the stream goes here.
+                    myStream.WriteLine(str);
+                }
+                myStream.Close();
+            }
+        }
+
+        private void btnSaveData_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
+
+                // Code to write the stream goes here.
+                if (dgvPrecipExtractOutputs.Rows.Count > 1)
+                {
+                    int counter = 1;
+                    int numColumns = dgvPrecipExtractOutputs.Columns.Count;
+                    foreach (DataGridViewRow row in dgvPrecipExtractOutputs.Rows)
+                    {
+                        string line = "";
+                        for (int i = 0; i < numColumns; i++)
+                        {
+                            string val = row.Cells[i].Value?.ToString() + ",";
+                            line = line + val.Trim();
+                        }
+                        if (!String.IsNullOrEmpty(line))
+                        {
+                            while (line.EndsWith(","))
+                            {
+                                line = line.Remove(line.Length - 1);
+                            }
+                            if (!String.IsNullOrEmpty(line))
+                            {
+                                myStream.WriteLine(line);
+                            }
+                        }
+                        counter++;
+                    }
+                }
+                myStream.Close();
+            }
         }
     }
     }

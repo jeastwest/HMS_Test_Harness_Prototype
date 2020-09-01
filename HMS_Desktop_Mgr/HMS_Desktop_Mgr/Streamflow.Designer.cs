@@ -54,11 +54,18 @@
             this.pnlStreamHydrologyAlgorithm = new System.Windows.Forms.Panel();
             this.ddlStreamHydrologyAlgorithm = new System.Windows.Forms.ComboBox();
             this.lblStreamHydrologyAlgorithm = new System.Windows.Forms.Label();
+            this.dgvOutputs = new System.Windows.Forms.DataGridView();
+            this.lblDgvOutputs = new System.Windows.Forms.Label();
+            this.btnSaveMetaData = new System.Windows.Forms.Button();
+            this.btnSaveInputData = new System.Windows.Forms.Button();
+            this.btnSaveData = new System.Windows.Forms.Button();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.pnlAlgorithm.SuspendLayout();
             this.pnlTemporalResolution.SuspendLayout();
             this.pnlTimeSpan.SuspendLayout();
             this.pnlPrecipSource.SuspendLayout();
             this.pnlStreamHydrologyAlgorithm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutputs)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAlgorithm
@@ -76,9 +83,9 @@
             this.txtAlgorithm.AutoSize = true;
             this.txtAlgorithm.Location = new System.Drawing.Point(35, 11);
             this.txtAlgorithm.Name = "txtAlgorithm";
-            this.txtAlgorithm.Size = new System.Drawing.Size(132, 20);
+            this.txtAlgorithm.Size = new System.Drawing.Size(136, 20);
             this.txtAlgorithm.TabIndex = 1;
-            this.txtAlgorithm.Text = "Runoff Algorithim";
+            this.txtAlgorithm.Text = "Runoff Algorithim:";
             // 
             // ddlAlgorithm
             // 
@@ -114,9 +121,9 @@
             this.lblTemporalResolution.AutoSize = true;
             this.lblTemporalResolution.Location = new System.Drawing.Point(4, 11);
             this.lblTemporalResolution.Name = "lblTemporalResolution";
-            this.lblTemporalResolution.Size = new System.Drawing.Size(155, 20);
+            this.lblTemporalResolution.Size = new System.Drawing.Size(159, 20);
             this.lblTemporalResolution.TabIndex = 0;
-            this.lblTemporalResolution.Text = "Temporal Resolution";
+            this.lblTemporalResolution.Text = "Temporal Resolution:";
             // 
             // pnlTimeSpan
             // 
@@ -153,18 +160,18 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 20);
+            this.label9.Size = new System.Drawing.Size(87, 20);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Start Date";
+            this.label9.Text = "Start Date:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(9, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 20);
+            this.label8.Size = new System.Drawing.Size(81, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "End Date";
+            this.label8.Text = "End Date:";
             // 
             // pnlPrecipSource
             // 
@@ -188,20 +195,20 @@
             // lblPrecipSource
             // 
             this.lblPrecipSource.AutoSize = true;
-            this.lblPrecipSource.Location = new System.Drawing.Point(16, 8);
+            this.lblPrecipSource.Location = new System.Drawing.Point(35, 11);
             this.lblPrecipSource.Name = "lblPrecipSource";
-            this.lblPrecipSource.Size = new System.Drawing.Size(151, 20);
+            this.lblPrecipSource.Size = new System.Drawing.Size(155, 20);
             this.lblPrecipSource.TabIndex = 0;
-            this.lblPrecipSource.Text = "Precipitation Source";
+            this.lblPrecipSource.Text = "Precipitation Source:";
             // 
             // lblAOI
             // 
             this.lblAOI.AutoSize = true;
             this.lblAOI.Location = new System.Drawing.Point(61, 19);
             this.lblAOI.Name = "lblAOI";
-            this.lblAOI.Size = new System.Drawing.Size(179, 20);
+            this.lblAOI.Size = new System.Drawing.Size(183, 20);
             this.lblAOI.TabIndex = 30;
-            this.lblAOI.Text = "Area of Interest Options";
+            this.lblAOI.Text = "Area of Interest Options:";
             // 
             // ddlAOI
             // 
@@ -231,10 +238,10 @@
             // 
             // rTxtUnformattedOutput
             // 
-            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(569, 19);
+            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(584, 19);
             this.rTxtUnformattedOutput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rTxtUnformattedOutput.Name = "rTxtUnformattedOutput";
-            this.rTxtUnformattedOutput.Size = new System.Drawing.Size(486, 341);
+            this.rTxtUnformattedOutput.Size = new System.Drawing.Size(370, 328);
             this.rTxtUnformattedOutput.TabIndex = 41;
             this.rTxtUnformattedOutput.Text = "";
             // 
@@ -259,7 +266,7 @@
             // lblUnformattedOutput
             // 
             this.lblUnformattedOutput.AutoSize = true;
-            this.lblUnformattedOutput.Location = new System.Drawing.Point(729, 9);
+            this.lblUnformattedOutput.Location = new System.Drawing.Point(706, 9);
             this.lblUnformattedOutput.Name = "lblUnformattedOutput";
             this.lblUnformattedOutput.Size = new System.Drawing.Size(152, 20);
             this.lblUnformattedOutput.TabIndex = 43;
@@ -268,12 +275,12 @@
             // btnSubmitStreamflow
             // 
             this.btnSubmitStreamflow.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSubmitStreamflow.Location = new System.Drawing.Point(321, 288);
+            this.btnSubmitStreamflow.Location = new System.Drawing.Point(316, 293);
             this.btnSubmitStreamflow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmitStreamflow.Name = "btnSubmitStreamflow";
-            this.btnSubmitStreamflow.Size = new System.Drawing.Size(119, 39);
+            this.btnSubmitStreamflow.Size = new System.Drawing.Size(189, 39);
             this.btnSubmitStreamflow.TabIndex = 44;
-            this.btnSubmitStreamflow.Text = "Submit";
+            this.btnSubmitStreamflow.Text = "Submit Request";
             this.btnSubmitStreamflow.UseVisualStyleBackColor = false;
             this.btnSubmitStreamflow.Click += new System.EventHandler(this.btnSubmitStreamflow_Click);
             // 
@@ -299,15 +306,83 @@
             this.lblStreamHydrologyAlgorithm.AutoSize = true;
             this.lblStreamHydrologyAlgorithm.Location = new System.Drawing.Point(10, 13);
             this.lblStreamHydrologyAlgorithm.Name = "lblStreamHydrologyAlgorithm";
-            this.lblStreamHydrologyAlgorithm.Size = new System.Drawing.Size(206, 20);
+            this.lblStreamHydrologyAlgorithm.Size = new System.Drawing.Size(210, 20);
             this.lblStreamHydrologyAlgorithm.TabIndex = 0;
-            this.lblStreamHydrologyAlgorithm.Text = "Stream Hydrology Algorithm";
+            this.lblStreamHydrologyAlgorithm.Text = "Stream Hydrology Algorithm:";
+            // 
+            // dgvOutputs
+            // 
+            this.dgvOutputs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOutputs.Location = new System.Drawing.Point(978, 19);
+            this.dgvOutputs.Name = "dgvOutputs";
+            this.dgvOutputs.RowHeadersWidth = 62;
+            this.dgvOutputs.RowTemplate.Height = 28;
+            this.dgvOutputs.Size = new System.Drawing.Size(400, 511);
+            this.dgvOutputs.TabIndex = 46;
+            // 
+            // lblDgvOutputs
+            // 
+            this.lblDgvOutputs.AutoSize = true;
+            this.lblDgvOutputs.Location = new System.Drawing.Point(1161, 9);
+            this.lblDgvOutputs.Name = "lblDgvOutputs";
+            this.lblDgvOutputs.Size = new System.Drawing.Size(87, 20);
+            this.lblDgvOutputs.TabIndex = 47;
+            this.lblDgvOutputs.Text = "Data Table";
+            // 
+            // btnSaveMetaData
+            // 
+            this.btnSaveMetaData.Location = new System.Drawing.Point(774, 389);
+            this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveMetaData.Name = "btnSaveMetaData";
+            this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
+            this.btnSaveMetaData.TabIndex = 50;
+            this.btnSaveMetaData.Text = "Save Meta Data";
+            this.btnSaveMetaData.UseVisualStyleBackColor = true;
+            this.btnSaveMetaData.Click += new System.EventHandler(this.btnSaveMetaData_Click);
+            // 
+            // btnSaveInputData
+            // 
+            this.btnSaveInputData.Location = new System.Drawing.Point(571, 389);
+            this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveInputData.Name = "btnSaveInputData";
+            this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
+            this.btnSaveInputData.TabIndex = 49;
+            this.btnSaveInputData.Text = "Save Input Data";
+            this.btnSaveInputData.UseVisualStyleBackColor = true;
+            this.btnSaveInputData.Click += new System.EventHandler(this.btnSaveInputData_Click);
+            // 
+            // btnSaveData
+            // 
+            this.btnSaveData.Location = new System.Drawing.Point(662, 442);
+            this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveData.Name = "btnSaveData";
+            this.btnSaveData.Size = new System.Drawing.Size(184, 45);
+            this.btnSaveData.TabIndex = 48;
+            this.btnSaveData.Text = "Save Data";
+            this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(567, 513);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(332, 40);
+            this.lblWarning.TabIndex = 51;
+            this.lblWarning.Text = "WARNING: All save buttons and \"Data Table\"\r\nare currently non-functional.";
             // 
             // Streamflow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 562);
+            this.ClientSize = new System.Drawing.Size(1390, 562);
+            this.Controls.Add(this.lblWarning);
+            this.Controls.Add(this.btnSaveMetaData);
+            this.Controls.Add(this.btnSaveInputData);
+            this.Controls.Add(this.btnSaveData);
+            this.Controls.Add(this.lblDgvOutputs);
+            this.Controls.Add(this.dgvOutputs);
             this.Controls.Add(this.pnlStreamHydrologyAlgorithm);
             this.Controls.Add(this.btnSubmitStreamflow);
             this.Controls.Add(this.lblUnformattedOutput);
@@ -336,6 +411,7 @@
             this.pnlPrecipSource.PerformLayout();
             this.pnlStreamHydrologyAlgorithm.ResumeLayout(false);
             this.pnlStreamHydrologyAlgorithm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutputs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +444,11 @@
         private System.Windows.Forms.Panel pnlStreamHydrologyAlgorithm;
         private System.Windows.Forms.ComboBox ddlStreamHydrologyAlgorithm;
         private System.Windows.Forms.Label lblStreamHydrologyAlgorithm;
+        private System.Windows.Forms.DataGridView dgvOutputs;
+        private System.Windows.Forms.Label lblDgvOutputs;
+        private System.Windows.Forms.Button btnSaveMetaData;
+        private System.Windows.Forms.Button btnSaveInputData;
+        private System.Windows.Forms.Button btnSaveData;
+        private System.Windows.Forms.Label lblWarning;
     }
 }

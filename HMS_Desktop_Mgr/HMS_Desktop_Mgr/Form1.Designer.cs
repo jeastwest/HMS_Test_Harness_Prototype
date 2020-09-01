@@ -105,60 +105,64 @@
             this.pnlLatLng.Controls.Add(this.lblLatitude);
             this.pnlLatLng.Controls.Add(this.txtLongitude);
             this.pnlLatLng.Controls.Add(this.txtLatitude);
-            this.pnlLatLng.Location = new System.Drawing.Point(12, 147);
+            this.pnlLatLng.Location = new System.Drawing.Point(14, 195);
+            this.pnlLatLng.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlLatLng.Name = "pnlLatLng";
-            this.pnlLatLng.Size = new System.Drawing.Size(503, 45);
+            this.pnlLatLng.Size = new System.Drawing.Size(566, 45);
             this.pnlLatLng.TabIndex = 0;
             // 
             // lblLongitude
             // 
             this.lblLongitude.AutoSize = true;
-            this.lblLongitude.Location = new System.Drawing.Point(281, 21);
+            this.lblLongitude.Location = new System.Drawing.Point(312, 13);
             this.lblLongitude.Name = "lblLongitude";
-            this.lblLongitude.Size = new System.Drawing.Size(71, 17);
+            this.lblLongitude.Size = new System.Drawing.Size(84, 20);
             this.lblLongitude.TabIndex = 3;
-            this.lblLongitude.Text = "Longitude";
+            this.lblLongitude.Text = "Longitude:";
             // 
             // lblLatitude
             // 
             this.lblLatitude.AutoSize = true;
-            this.lblLatitude.Location = new System.Drawing.Point(31, 18);
+            this.lblLatitude.Location = new System.Drawing.Point(33, 13);
             this.lblLatitude.Name = "lblLatitude";
-            this.lblLatitude.Size = new System.Drawing.Size(59, 17);
+            this.lblLatitude.Size = new System.Drawing.Size(71, 20);
             this.lblLatitude.TabIndex = 2;
-            this.lblLatitude.Text = "Latitude";
+            this.lblLatitude.Text = "Latitude:";
             // 
             // txtLongitude
             // 
-            this.txtLongitude.Location = new System.Drawing.Point(369, 15);
+            this.txtLongitude.Location = new System.Drawing.Point(413, 10);
+            this.txtLongitude.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLongitude.Name = "txtLongitude";
-            this.txtLongitude.Size = new System.Drawing.Size(122, 22);
+            this.txtLongitude.Size = new System.Drawing.Size(137, 26);
             this.txtLongitude.TabIndex = 1;
             this.txtLongitude.Text = "-83.356893";
             // 
             // txtLatitude
             // 
-            this.txtLatitude.Location = new System.Drawing.Point(102, 16);
+            this.txtLatitude.Location = new System.Drawing.Point(115, 10);
+            this.txtLatitude.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLatitude.Name = "txtLatitude";
-            this.txtLatitude.Size = new System.Drawing.Size(132, 22);
+            this.txtLatitude.Size = new System.Drawing.Size(148, 26);
             this.txtLatitude.TabIndex = 0;
             this.txtLatitude.Text = "33.925575";
             // 
             // ddlModules
             // 
             this.ddlModules.FormattingEnabled = true;
-            this.ddlModules.Location = new System.Drawing.Point(142, 41);
+            this.ddlModules.Location = new System.Drawing.Point(160, 51);
+            this.ddlModules.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlModules.Name = "ddlModules";
-            this.ddlModules.Size = new System.Drawing.Size(200, 24);
+            this.ddlModules.Size = new System.Drawing.Size(224, 28);
             this.ddlModules.TabIndex = 1;
             this.ddlModules.SelectedIndexChanged += new System.EventHandler(this.moduleSelection);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 44);
+            this.label1.Location = new System.Drawing.Point(30, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 17);
+            this.label1.Size = new System.Drawing.Size(123, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Select a Module";
             // 
@@ -166,48 +170,50 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(109, 21);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(89, 22);
+            this.textBox1.Size = new System.Drawing.Size(89, 26);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(109, 49);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 22);
+            this.textBox2.Size = new System.Drawing.Size(131, 26);
             this.textBox2.TabIndex = 1;
             // 
             // ddlAOI
             // 
             this.ddlAOI.FormattingEnabled = true;
-            this.ddlAOI.Location = new System.Drawing.Point(217, 82);
+            this.ddlAOI.Location = new System.Drawing.Point(244, 102);
+            this.ddlAOI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlAOI.Name = "ddlAOI";
-            this.ddlAOI.Size = new System.Drawing.Size(121, 24);
+            this.ddlAOI.Size = new System.Drawing.Size(136, 28);
             this.ddlAOI.TabIndex = 3;
             this.ddlAOI.SelectedIndexChanged += new System.EventHandler(this.ddlAOI_SelectedIndexChanged);
             // 
             // lblAOI
             // 
             this.lblAOI.AutoSize = true;
-            this.lblAOI.Location = new System.Drawing.Point(53, 85);
+            this.lblAOI.Location = new System.Drawing.Point(60, 106);
             this.lblAOI.Name = "lblAOI";
-            this.lblAOI.Size = new System.Drawing.Size(158, 17);
+            this.lblAOI.Size = new System.Drawing.Size(183, 20);
             this.lblAOI.TabIndex = 4;
-            this.lblAOI.Text = "Area of Interest Options";
+            this.lblAOI.Text = "Area of Interest Options:";
             // 
             // lblCOMID
             // 
             this.lblCOMID.AutoSize = true;
-            this.lblCOMID.Location = new System.Drawing.Point(15, 5);
+            this.lblCOMID.Location = new System.Drawing.Point(32, 9);
             this.lblCOMID.Name = "lblCOMID";
-            this.lblCOMID.Size = new System.Drawing.Size(52, 17);
+            this.lblCOMID.Size = new System.Drawing.Size(66, 20);
             this.lblCOMID.TabIndex = 5;
-            this.lblCOMID.Text = "COMID";
+            this.lblCOMID.Text = "COMID:";
             // 
             // txtCOMID
             // 
-            this.txtCOMID.Location = new System.Drawing.Point(89, 5);
+            this.txtCOMID.Location = new System.Drawing.Point(100, 6);
+            this.txtCOMID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCOMID.Name = "txtCOMID";
-            this.txtCOMID.Size = new System.Drawing.Size(100, 22);
+            this.txtCOMID.Size = new System.Drawing.Size(112, 26);
             this.txtCOMID.TabIndex = 6;
             this.txtCOMID.Text = "22076143";
             // 
@@ -215,62 +221,67 @@
             // 
             this.pnlCOMID.Controls.Add(this.lblCOMID);
             this.pnlCOMID.Controls.Add(this.txtCOMID);
-            this.pnlCOMID.Location = new System.Drawing.Point(12, 198);
+            this.pnlCOMID.Location = new System.Drawing.Point(14, 248);
+            this.pnlCOMID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlCOMID.Name = "pnlCOMID";
-            this.pnlCOMID.Size = new System.Drawing.Size(200, 33);
+            this.pnlCOMID.Size = new System.Drawing.Size(225, 41);
             this.pnlCOMID.TabIndex = 7;
             // 
             // pnlStationID
             // 
             this.pnlStationID.Controls.Add(this.txtStationID);
             this.pnlStationID.Controls.Add(this.lblStationID);
-            this.pnlStationID.Location = new System.Drawing.Point(240, 198);
+            this.pnlStationID.Location = new System.Drawing.Point(270, 248);
+            this.pnlStationID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlStationID.Name = "pnlStationID";
-            this.pnlStationID.Size = new System.Drawing.Size(275, 33);
+            this.pnlStationID.Size = new System.Drawing.Size(309, 41);
             this.pnlStationID.TabIndex = 8;
             // 
             // txtStationID
             // 
-            this.txtStationID.Location = new System.Drawing.Point(74, 5);
+            this.txtStationID.Location = new System.Drawing.Point(83, 6);
+            this.txtStationID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStationID.Name = "txtStationID";
-            this.txtStationID.Size = new System.Drawing.Size(161, 22);
+            this.txtStationID.Size = new System.Drawing.Size(181, 26);
             this.txtStationID.TabIndex = 1;
             this.txtStationID.Text = "GHCND:USW00013874";
             // 
             // lblStationID
             // 
             this.lblStationID.AutoSize = true;
-            this.lblStationID.Location = new System.Drawing.Point(3, 5);
+            this.lblStationID.Location = new System.Drawing.Point(4, 9);
             this.lblStationID.Name = "lblStationID";
-            this.lblStationID.Size = new System.Drawing.Size(65, 17);
+            this.lblStationID.Size = new System.Drawing.Size(81, 20);
             this.lblStationID.TabIndex = 0;
-            this.lblStationID.Text = "StationID";
+            this.lblStationID.Text = "StationID:";
             // 
             // pnlSource
             // 
             this.pnlSource.Controls.Add(this.ddlSource);
             this.pnlSource.Controls.Add(this.lblSource);
-            this.pnlSource.Location = new System.Drawing.Point(12, 237);
+            this.pnlSource.Location = new System.Drawing.Point(14, 296);
+            this.pnlSource.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlSource.Name = "pnlSource";
-            this.pnlSource.Size = new System.Drawing.Size(234, 29);
+            this.pnlSource.Size = new System.Drawing.Size(263, 36);
             this.pnlSource.TabIndex = 2;
             // 
             // ddlSource
             // 
             this.ddlSource.FormattingEnabled = true;
-            this.ddlSource.Location = new System.Drawing.Point(102, 3);
+            this.ddlSource.Location = new System.Drawing.Point(115, 4);
+            this.ddlSource.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlSource.Name = "ddlSource";
-            this.ddlSource.Size = new System.Drawing.Size(121, 24);
+            this.ddlSource.Size = new System.Drawing.Size(136, 28);
             this.ddlSource.TabIndex = 1;
             // 
             // lblSource
             // 
             this.lblSource.AutoSize = true;
-            this.lblSource.Location = new System.Drawing.Point(25, 4);
+            this.lblSource.Location = new System.Drawing.Point(38, 7);
             this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(53, 17);
+            this.lblSource.Size = new System.Drawing.Size(64, 20);
             this.lblSource.TabIndex = 0;
-            this.lblSource.Text = "Source";
+            this.lblSource.Text = "Source:";
             // 
             // pnlTimeSpan
             // 
@@ -278,165 +289,179 @@
             this.pnlTimeSpan.Controls.Add(this.txtStartDate);
             this.pnlTimeSpan.Controls.Add(this.label9);
             this.pnlTimeSpan.Controls.Add(this.label8);
-            this.pnlTimeSpan.Location = new System.Drawing.Point(252, 237);
+            this.pnlTimeSpan.Location = new System.Drawing.Point(284, 296);
+            this.pnlTimeSpan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTimeSpan.Name = "pnlTimeSpan";
-            this.pnlTimeSpan.Size = new System.Drawing.Size(263, 66);
+            this.pnlTimeSpan.Size = new System.Drawing.Size(296, 82);
             this.pnlTimeSpan.TabIndex = 9;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.Location = new System.Drawing.Point(81, 38);
+            this.txtEndDate.Location = new System.Drawing.Point(91, 48);
+            this.txtEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.Size = new System.Drawing.Size(127, 22);
+            this.txtEndDate.Size = new System.Drawing.Size(142, 26);
             this.txtEndDate.TabIndex = 3;
             this.txtEndDate.Text = "2015-01-31";
             // 
             // txtStartDate
             // 
-            this.txtStartDate.Location = new System.Drawing.Point(81, 7);
+            this.txtStartDate.Location = new System.Drawing.Point(91, 9);
+            this.txtStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.Size = new System.Drawing.Size(127, 22);
+            this.txtStartDate.Size = new System.Drawing.Size(142, 26);
             this.txtStartDate.TabIndex = 2;
             this.txtStartDate.Text = "2015-01-01";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 7);
+            this.label9.Location = new System.Drawing.Point(3, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 17);
+            this.label9.Size = new System.Drawing.Size(87, 20);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Start Date";
+            this.label9.Text = "Start Date:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 38);
+            this.label8.Location = new System.Drawing.Point(9, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 17);
+            this.label8.Size = new System.Drawing.Size(81, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "End Date";
+            this.label8.Text = "End Date:";
             // 
             // pnlDataFormat
             // 
             this.pnlDataFormat.Controls.Add(this.lblOutputDataFormat);
             this.pnlDataFormat.Controls.Add(this.ddlOutputDataFormat);
-            this.pnlDataFormat.Location = new System.Drawing.Point(12, 308);
+            this.pnlDataFormat.Location = new System.Drawing.Point(14, 385);
+            this.pnlDataFormat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDataFormat.Name = "pnlDataFormat";
-            this.pnlDataFormat.Size = new System.Drawing.Size(249, 37);
+            this.pnlDataFormat.Size = new System.Drawing.Size(280, 46);
             this.pnlDataFormat.TabIndex = 10;
             // 
             // lblOutputDataFormat
             // 
             this.lblOutputDataFormat.AutoSize = true;
-            this.lblOutputDataFormat.Location = new System.Drawing.Point(9, 9);
+            this.lblOutputDataFormat.Location = new System.Drawing.Point(10, 11);
             this.lblOutputDataFormat.Name = "lblOutputDataFormat";
-            this.lblOutputDataFormat.Size = new System.Drawing.Size(133, 17);
+            this.lblOutputDataFormat.Size = new System.Drawing.Size(156, 20);
             this.lblOutputDataFormat.TabIndex = 0;
-            this.lblOutputDataFormat.Text = "Output Data Format";
+            this.lblOutputDataFormat.Text = "Output Data Format:";
             // 
             // ddlOutputDataFormat
             // 
             this.ddlOutputDataFormat.FormattingEnabled = true;
-            this.ddlOutputDataFormat.Location = new System.Drawing.Point(148, 6);
+            this.ddlOutputDataFormat.Location = new System.Drawing.Point(166, 8);
+            this.ddlOutputDataFormat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlOutputDataFormat.Name = "ddlOutputDataFormat";
-            this.ddlOutputDataFormat.Size = new System.Drawing.Size(83, 24);
+            this.ddlOutputDataFormat.Size = new System.Drawing.Size(93, 28);
             this.ddlOutputDataFormat.TabIndex = 1;
             // 
             // pnlTemporalResolution
             // 
             this.pnlTemporalResolution.Controls.Add(this.ddlTemporalResolution);
             this.pnlTemporalResolution.Controls.Add(this.lblTemporalResolution);
-            this.pnlTemporalResolution.Location = new System.Drawing.Point(267, 308);
+            this.pnlTemporalResolution.Location = new System.Drawing.Point(300, 385);
+            this.pnlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTemporalResolution.Name = "pnlTemporalResolution";
-            this.pnlTemporalResolution.Size = new System.Drawing.Size(247, 37);
+            this.pnlTemporalResolution.Size = new System.Drawing.Size(278, 46);
             this.pnlTemporalResolution.TabIndex = 11;
             // 
             // ddlTemporalResolution
             // 
             this.ddlTemporalResolution.FormattingEnabled = true;
-            this.ddlTemporalResolution.Location = new System.Drawing.Point(150, 6);
+            this.ddlTemporalResolution.Location = new System.Drawing.Point(169, 8);
+            this.ddlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlTemporalResolution.Name = "ddlTemporalResolution";
-            this.ddlTemporalResolution.Size = new System.Drawing.Size(85, 24);
+            this.ddlTemporalResolution.Size = new System.Drawing.Size(95, 28);
             this.ddlTemporalResolution.TabIndex = 1;
             // 
             // lblTemporalResolution
             // 
             this.lblTemporalResolution.AutoSize = true;
-            this.lblTemporalResolution.Location = new System.Drawing.Point(4, 9);
+            this.lblTemporalResolution.Location = new System.Drawing.Point(8, 11);
             this.lblTemporalResolution.Name = "lblTemporalResolution";
-            this.lblTemporalResolution.Size = new System.Drawing.Size(139, 17);
+            this.lblTemporalResolution.Size = new System.Drawing.Size(159, 20);
             this.lblTemporalResolution.TabIndex = 0;
-            this.lblTemporalResolution.Text = "Temporal Resolution";
+            this.lblTemporalResolution.Text = "Temporal Resolution:";
             // 
             // pnlTimeZone
             // 
             this.pnlTimeZone.Controls.Add(this.ddlTimeZone);
             this.pnlTimeZone.Controls.Add(this.lblTimeZone);
-            this.pnlTimeZone.Location = new System.Drawing.Point(12, 270);
+            this.pnlTimeZone.Location = new System.Drawing.Point(14, 338);
+            this.pnlTimeZone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTimeZone.Name = "pnlTimeZone";
-            this.pnlTimeZone.Size = new System.Drawing.Size(234, 33);
+            this.pnlTimeZone.Size = new System.Drawing.Size(263, 41);
             this.pnlTimeZone.TabIndex = 12;
             // 
             // ddlTimeZone
             // 
             this.ddlTimeZone.FormattingEnabled = true;
-            this.ddlTimeZone.Location = new System.Drawing.Point(102, 4);
+            this.ddlTimeZone.Location = new System.Drawing.Point(115, 5);
+            this.ddlTimeZone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlTimeZone.Name = "ddlTimeZone";
-            this.ddlTimeZone.Size = new System.Drawing.Size(121, 24);
+            this.ddlTimeZone.Size = new System.Drawing.Size(136, 28);
             this.ddlTimeZone.TabIndex = 1;
             // 
             // lblTimeZone
             // 
             this.lblTimeZone.AutoSize = true;
-            this.lblTimeZone.Location = new System.Drawing.Point(14, 9);
+            this.lblTimeZone.Location = new System.Drawing.Point(16, 11);
             this.lblTimeZone.Name = "lblTimeZone";
-            this.lblTimeZone.Size = new System.Drawing.Size(76, 17);
+            this.lblTimeZone.Size = new System.Drawing.Size(88, 20);
             this.lblTimeZone.TabIndex = 0;
-            this.lblTimeZone.Text = "Time Zone";
+            this.lblTimeZone.Text = "Time Zone:";
             // 
             // btnSubmitPrecip
             // 
             this.btnSubmitPrecip.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSubmitPrecip.Location = new System.Drawing.Point(217, 406);
+            this.btnSubmitPrecip.Location = new System.Drawing.Point(212, 497);
+            this.btnSubmitPrecip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmitPrecip.Name = "btnSubmitPrecip";
-            this.btnSubmitPrecip.Size = new System.Drawing.Size(84, 29);
+            this.btnSubmitPrecip.Size = new System.Drawing.Size(162, 36);
             this.btnSubmitPrecip.TabIndex = 13;
-            this.btnSubmitPrecip.Text = "Submit";
+            this.btnSubmitPrecip.Text = "Submit Request";
             this.btnSubmitPrecip.UseVisualStyleBackColor = false;
             this.btnSubmitPrecip.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // pnlOutputs
             // 
             this.pnlOutputs.Controls.Add(this.txtOutputs);
-            this.pnlOutputs.Location = new System.Drawing.Point(521, 31);
+            this.pnlOutputs.Location = new System.Drawing.Point(586, 39);
+            this.pnlOutputs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlOutputs.Name = "pnlOutputs";
-            this.pnlOutputs.Size = new System.Drawing.Size(667, 265);
+            this.pnlOutputs.Size = new System.Drawing.Size(750, 331);
             this.pnlOutputs.TabIndex = 14;
             // 
             // txtOutputs
             // 
-            this.txtOutputs.Location = new System.Drawing.Point(0, 0);
+            this.txtOutputs.Location = new System.Drawing.Point(1, 2);
+            this.txtOutputs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOutputs.Name = "txtOutputs";
-            this.txtOutputs.Size = new System.Drawing.Size(664, 261);
+            this.txtOutputs.Size = new System.Drawing.Size(746, 325);
             this.txtOutputs.TabIndex = 0;
             this.txtOutputs.Text = "";
             // 
             // dgvOutputs
             // 
             this.dgvOutputs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOutputs.Location = new System.Drawing.Point(527, 308);
+            this.dgvOutputs.Location = new System.Drawing.Point(593, 385);
+            this.dgvOutputs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvOutputs.Name = "dgvOutputs";
             this.dgvOutputs.RowHeadersWidth = 51;
             this.dgvOutputs.RowTemplate.Height = 24;
-            this.dgvOutputs.Size = new System.Drawing.Size(658, 260);
+            this.dgvOutputs.Size = new System.Drawing.Size(740, 325);
             this.dgvOutputs.TabIndex = 15;
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(1021, 595);
+            this.btnSaveData.Location = new System.Drawing.Point(1149, 744);
+            this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(164, 36);
+            this.btnSaveData.Size = new System.Drawing.Size(184, 45);
             this.btnSaveData.TabIndex = 16;
             this.btnSaveData.Text = "Save Data";
             this.btnSaveData.UseVisualStyleBackColor = true;
@@ -446,70 +471,73 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(12, 9);
+            this.lblError.Location = new System.Drawing.Point(14, 11);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 17);
+            this.lblError.Size = new System.Drawing.Size(0, 20);
             this.lblError.TabIndex = 17;
             // 
             // pnlAlgorithm
             // 
             this.pnlAlgorithm.Controls.Add(this.txtAlgorithm);
             this.pnlAlgorithm.Controls.Add(this.ddlAlgorithm);
-            this.pnlAlgorithm.Location = new System.Drawing.Point(130, 112);
+            this.pnlAlgorithm.Location = new System.Drawing.Point(146, 140);
+            this.pnlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlAlgorithm.Name = "pnlAlgorithm";
-            this.pnlAlgorithm.Size = new System.Drawing.Size(234, 29);
+            this.pnlAlgorithm.Size = new System.Drawing.Size(263, 36);
             this.pnlAlgorithm.TabIndex = 19;
             // 
             // txtAlgorithm
             // 
             this.txtAlgorithm.AutoSize = true;
-            this.txtAlgorithm.Location = new System.Drawing.Point(12, 6);
+            this.txtAlgorithm.Location = new System.Drawing.Point(14, 8);
             this.txtAlgorithm.Name = "txtAlgorithm";
-            this.txtAlgorithm.Size = new System.Drawing.Size(70, 17);
+            this.txtAlgorithm.Size = new System.Drawing.Size(83, 20);
             this.txtAlgorithm.TabIndex = 1;
-            this.txtAlgorithm.Text = "Algorithim";
+            this.txtAlgorithm.Text = "Algorithim:";
             // 
             // ddlAlgorithm
             // 
             this.ddlAlgorithm.FormattingEnabled = true;
-            this.ddlAlgorithm.Location = new System.Drawing.Point(110, 3);
+            this.ddlAlgorithm.Location = new System.Drawing.Point(124, 4);
+            this.ddlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlAlgorithm.Name = "ddlAlgorithm";
-            this.ddlAlgorithm.Size = new System.Drawing.Size(121, 24);
+            this.ddlAlgorithm.Size = new System.Drawing.Size(136, 28);
             this.ddlAlgorithm.TabIndex = 0;
             this.ddlAlgorithm.SelectedIndexChanged += new System.EventHandler(this.ddlAlgorithm_SelectedIndexChanged);
             // 
             // txtInputRequest
             // 
-            this.txtInputRequest.Location = new System.Drawing.Point(15, 467);
+            this.txtInputRequest.Location = new System.Drawing.Point(17, 584);
+            this.txtInputRequest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInputRequest.Name = "txtInputRequest";
-            this.txtInputRequest.Size = new System.Drawing.Size(506, 164);
+            this.txtInputRequest.Size = new System.Drawing.Size(569, 204);
             this.txtInputRequest.TabIndex = 20;
             this.txtInputRequest.Text = "";
             // 
             // lblInputRequest
             // 
             this.lblInputRequest.AutoSize = true;
-            this.lblInputRequest.Location = new System.Drawing.Point(214, 457);
+            this.lblInputRequest.Location = new System.Drawing.Point(241, 571);
             this.lblInputRequest.Name = "lblInputRequest";
-            this.lblInputRequest.Size = new System.Drawing.Size(97, 17);
+            this.lblInputRequest.Size = new System.Drawing.Size(110, 20);
             this.lblInputRequest.TabIndex = 21;
             this.lblInputRequest.Text = "Request Body";
             // 
             // lblOutputText
             // 
             this.lblOutputText.AutoSize = true;
-            this.lblOutputText.Location = new System.Drawing.Point(788, 20);
+            this.lblOutputText.Location = new System.Drawing.Point(913, 27);
             this.lblOutputText.Name = "lblOutputText";
-            this.lblOutputText.Size = new System.Drawing.Size(133, 17);
+            this.lblOutputText.Size = new System.Drawing.Size(152, 20);
             this.lblOutputText.TabIndex = 22;
             this.lblOutputText.Text = "Unformatted Output";
             // 
             // lblOutputTable
             // 
             this.lblOutputTable.AutoSize = true;
-            this.lblOutputTable.Location = new System.Drawing.Point(830, 299);
+            this.lblOutputTable.Location = new System.Drawing.Point(934, 374);
             this.lblOutputTable.Name = "lblOutputTable";
-            this.lblOutputTable.Size = new System.Drawing.Size(91, 17);
+            this.lblOutputTable.Size = new System.Drawing.Size(101, 20);
             this.lblOutputTable.TabIndex = 23;
             this.lblOutputTable.Text = "Output Table";
             // 
@@ -517,59 +545,64 @@
             // 
             this.pnlLayerDepth.Controls.Add(this.lblLayerDepth);
             this.pnlLayerDepth.Controls.Add(this.ddlLayerDepth);
-            this.pnlLayerDepth.Location = new System.Drawing.Point(15, 351);
+            this.pnlLayerDepth.Location = new System.Drawing.Point(17, 439);
+            this.pnlLayerDepth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlLayerDepth.Name = "pnlLayerDepth";
-            this.pnlLayerDepth.Size = new System.Drawing.Size(246, 40);
+            this.pnlLayerDepth.Size = new System.Drawing.Size(277, 50);
             this.pnlLayerDepth.TabIndex = 24;
             // 
             // lblLayerDepth
             // 
             this.lblLayerDepth.AutoSize = true;
-            this.lblLayerDepth.Location = new System.Drawing.Point(4, 12);
+            this.lblLayerDepth.Location = new System.Drawing.Point(4, 15);
             this.lblLayerDepth.Name = "lblLayerDepth";
-            this.lblLayerDepth.Size = new System.Drawing.Size(118, 17);
+            this.lblLayerDepth.Size = new System.Drawing.Size(135, 20);
             this.lblLayerDepth.TabIndex = 1;
-            this.lblLayerDepth.Text = "Layer Depth (cm)";
+            this.lblLayerDepth.Text = "Layer Depth (cm):";
             // 
             // ddlLayerDepth
             // 
             this.ddlLayerDepth.FormattingEnabled = true;
-            this.ddlLayerDepth.Location = new System.Drawing.Point(123, 9);
+            this.ddlLayerDepth.Location = new System.Drawing.Point(138, 11);
+            this.ddlLayerDepth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlLayerDepth.Name = "ddlLayerDepth";
-            this.ddlLayerDepth.Size = new System.Drawing.Size(120, 24);
+            this.ddlLayerDepth.Size = new System.Drawing.Size(134, 28);
             this.ddlLayerDepth.TabIndex = 0;
             // 
             // pnlAlbedo
             // 
             this.pnlAlbedo.Controls.Add(this.txtAlbedo);
             this.pnlAlbedo.Controls.Add(this.lblAlbedo);
-            this.pnlAlbedo.Location = new System.Drawing.Point(268, 351);
+            this.pnlAlbedo.Location = new System.Drawing.Point(302, 439);
+            this.pnlAlbedo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlAlbedo.Name = "pnlAlbedo";
-            this.pnlAlbedo.Size = new System.Drawing.Size(246, 40);
+            this.pnlAlbedo.Size = new System.Drawing.Size(277, 50);
             this.pnlAlbedo.TabIndex = 26;
             // 
             // txtAlbedo
             // 
-            this.txtAlbedo.Location = new System.Drawing.Point(134, 9);
+            this.txtAlbedo.Location = new System.Drawing.Point(151, 11);
+            this.txtAlbedo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAlbedo.Name = "txtAlbedo";
-            this.txtAlbedo.Size = new System.Drawing.Size(100, 22);
+            this.txtAlbedo.Size = new System.Drawing.Size(112, 26);
             this.txtAlbedo.TabIndex = 1;
             this.txtAlbedo.Text = "0.23";
             // 
             // lblAlbedo
             // 
             this.lblAlbedo.AutoSize = true;
-            this.lblAlbedo.Location = new System.Drawing.Point(76, 12);
+            this.lblAlbedo.Location = new System.Drawing.Point(86, 15);
             this.lblAlbedo.Name = "lblAlbedo";
-            this.lblAlbedo.Size = new System.Drawing.Size(52, 17);
+            this.lblAlbedo.Size = new System.Drawing.Size(63, 20);
             this.lblAlbedo.TabIndex = 0;
-            this.lblAlbedo.Text = "Albedo";
+            this.lblAlbedo.Text = "Albedo:";
             // 
             // btnSaveInputData
             // 
-            this.btnSaveInputData.Location = new System.Drawing.Point(651, 595);
+            this.btnSaveInputData.Location = new System.Drawing.Point(732, 744);
+            this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveInputData.Name = "btnSaveInputData";
-            this.btnSaveInputData.Size = new System.Drawing.Size(164, 36);
+            this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
             this.btnSaveInputData.TabIndex = 27;
             this.btnSaveInputData.Text = "Save Input Data";
             this.btnSaveInputData.UseVisualStyleBackColor = true;
@@ -577,9 +610,10 @@
             // 
             // btnSaveMetaData
             // 
-            this.btnSaveMetaData.Location = new System.Drawing.Point(833, 595);
+            this.btnSaveMetaData.Location = new System.Drawing.Point(937, 744);
+            this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveMetaData.Name = "btnSaveMetaData";
-            this.btnSaveMetaData.Size = new System.Drawing.Size(164, 36);
+            this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
             this.btnSaveMetaData.TabIndex = 28;
             this.btnSaveMetaData.Text = "Save Meta Data";
             this.btnSaveMetaData.UseVisualStyleBackColor = true;
@@ -588,9 +622,9 @@
             // lnkWorkFlows
             // 
             this.lnkWorkFlows.AutoSize = true;
-            this.lnkWorkFlows.Location = new System.Drawing.Point(185, 9);
+            this.lnkWorkFlows.Location = new System.Drawing.Point(208, 11);
             this.lnkWorkFlows.Name = "lnkWorkFlows";
-            this.lnkWorkFlows.Size = new System.Drawing.Size(126, 17);
+            this.lnkWorkFlows.Size = new System.Drawing.Size(142, 20);
             this.lnkWorkFlows.TabIndex = 29;
             this.lnkWorkFlows.TabStop = true;
             this.lnkWorkFlows.Text = "Click for Workflows";
@@ -598,9 +632,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 643);
+            this.ClientSize = new System.Drawing.Size(1350, 804);
             this.Controls.Add(this.lnkWorkFlows);
             this.Controls.Add(this.btnSaveMetaData);
             this.Controls.Add(this.btnSaveInputData);
@@ -628,6 +662,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ddlModules);
             this.Controls.Add(this.pnlLatLng);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

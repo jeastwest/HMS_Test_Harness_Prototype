@@ -16,21 +16,24 @@ using Newtonsoft.Json.Linq;
 using System.Data;
 using System.Linq;
 using System.Collections;
+using System.Drawing;
 
 namespace HMS_Desktop_Mgr
 {
     public partial class Form1 : Form
     {
+        List<string> metaDataForExport = new List<string>();
         public Form1()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e) 
-        /*Initializing a blank startup screen.
+        /* Initializing a blank startup screen.
         You must select a module from the drop down list to continue.
         */
         {
+            this.Size = new Size(1000, 625);
             ddlModules.DataSource = Enum.GetValues(typeof(Globals.moduleList));
             ddlAOI.Visible = false;
             ddlSource.Visible = false;
@@ -50,7 +53,7 @@ namespace HMS_Desktop_Mgr
             lblTemporalResolution.Visible = false;
             btnSubmitPrecip.Visible = false;
         }
-
+        
 
         //The code below calls a function that reorganizes the display in respect to the desired module.
         private void moduleSelection(object sender, EventArgs e) 
@@ -58,8 +61,8 @@ namespace HMS_Desktop_Mgr
             setDisplays();
         }
 
-
-        private void setDisplays() //This method is tricky but eliminates the need for an entirely separate page for each module.
+        //This method is tricky but eliminates the need for an entirely separate page for each module.
+        private void setDisplays() 
         {
             switch (ddlModules.SelectedValue.ToString())
             {
@@ -434,6 +437,8 @@ namespace HMS_Desktop_Mgr
 
             RequestBody requestBody = new RequestBody();
 
+            /* This switch method is changing module specific parameters such as request URL and data source.
+               Refer to "Globals.cs" to view the URL path */
 
             switch (ddlModules.SelectedValue.ToString())
             {
@@ -461,16 +466,19 @@ namespace HMS_Desktop_Mgr
                     requestBody.source = ddlSource.SelectedItem.ToString();
                     URL = Globals.baseURL + Globals.dewPointURL;
                     break;
+
                 case "Solar_Radiation":
                     lblError.Text = "";
                     requestBody.source = ddlSource.SelectedItem.ToString();
                     URL = Globals.baseURL + Globals.solarRadiationURL;
                     break;
+
                 case "Wind":
                     lblError.Text = "";
                     requestBody.source = ddlSource.SelectedItem.ToString();
                     URL = Globals.baseURL + Globals.windURL;
                     break;
+
                 case "Surface_Runoff":
                     lblError.Text = "";
                     if (ddlAlgorithm.SelectedValue.ToString() != "curvenumber")
@@ -484,6 +492,7 @@ namespace HMS_Desktop_Mgr
                     }
                     URL = Globals.baseURL + Globals.surfaceRunoffURL;
                     break;
+
                 case "Subsurface_Flow":
                     lblError.Text = "";
                     if (ddlAlgorithm.SelectedValue.ToString() != "curvenumber")
@@ -497,12 +506,14 @@ namespace HMS_Desktop_Mgr
                     }
                     URL = Globals.baseURL + Globals.subsurfaceFlowURL;
                     break;
+
                 case "Soil_Moisture":
                     lblError.Text = "";
                     requestBody.source = ddlSource.SelectedItem.ToString();
                     requestBody.layers = new string[] { ddlLayerDepth.SelectedItem.ToString().Replace("From", "").Replace("To", "-"), "10-40" }; 
                     URL = Globals.baseURL + Globals.soilMoistureURL;
                     break;
+
                 case "Evapotranspiration":
                     lblError.Text = "";
                     if (ddlAlgorithm.SelectedItem.ToString() == "penmandaily")
@@ -517,20 +528,22 @@ namespace HMS_Desktop_Mgr
                     requestBody.algorithm = ddlAlgorithm.SelectedItem.ToString();
                     URL = Globals.baseURL + Globals.evapotranspirationURL;
                     break;
+
                 default:
                     lblError.Text = "Error: Unknown module requested";
                     break;
             }
 
 
-
-            //requestBody.dateTimeSpan.dateTimeFormat = null;
+            //Assigning the datetime format and start/end dates
             requestBody.dateTimeSpan.dateTimeFormat = "yyyy-MM-dd HH";
             requestBody.dateTimeSpan.endDate = txtEndDate.Text + "T00:00:00";
             requestBody.dateTimeSpan.startDate = txtStartDate.Text + "T00:00:00"; //  "2015 -01-01T00:00:00";
 
             requestBody.geometry.geometryMetadata = null;
             requestBody.geometry.timezone = null;
+
+            //Setting request body paramaters based on Area of Interest options
             if (ddlAOI.SelectedItem.ToString() == "COMID")
             {
                 requestBody.geometry.description = "COMID";
@@ -610,11 +623,10 @@ namespace HMS_Desktop_Mgr
             foreach (JToken mLabel in metaItems)
             {
                 DataRow dr = dtMetaData.NewRow();
+                metaDataForExport.Add(mLabel.ToString());
                 mLabel.ToObject<JProperty>();
                 string item = mLabel.ToObject<JProperty>().Name;
                 System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex("column_[1-9]");
-                //if (item.Contains("column_") && ((item.EndsWith("1")) || (item.EndsWith("2")) || (item.EndsWith("3")) || (item.EndsWith("4"))))
-
                 if ((rgx.IsMatch(item)) && (item.Length == 8))
                 {
                     dr["Item"] = item.Trim();
@@ -630,7 +642,7 @@ namespace HMS_Desktop_Mgr
                 dt.Columns.Add(col.Value);
             }
 
-
+            
 
             //Generating output data table 
             foreach (JToken item in items)
@@ -655,21 +667,8 @@ namespace HMS_Desktop_Mgr
             return responseString;
         }
 
-    
-
-        private void btnSaveMetaData_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSaveInputData_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnSaveData_Click(object sender, EventArgs e)
-        {
-
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -679,8 +678,49 @@ namespace HMS_Desktop_Mgr
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
-                //if ((myStream = saveFileDialog1.OpenFile()) != null)
-                //{
+                myStream.WriteLine(txtInputRequest.Text);
+                myStream.Close();
+            }
+        }
+
+
+        private void btnSaveMetaData_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
+                for (int i = 0; i < metaDataForExport.Count; i++)
+                {
+                    string str = metaDataForExport[i].ToString().Replace('"', '\0');
+                    int idx = str.IndexOf(":");
+                    str = str.Remove(idx, 1).Insert(idx, ",");
+                    // Code to write the stream goes here.
+                    myStream.WriteLine(str);
+                }
+                myStream.Close();
+            }
+        }
+
+     
+        //This function allows the user to save output data when clicked
+        private void btnSaveData_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter myStream = new StreamWriter(saveFileDialog1.FileName);
+ 
                 // Code to write the stream goes here.
                 if (dgvOutputs.Rows.Count > 1)
                     {
@@ -688,11 +728,7 @@ namespace HMS_Desktop_Mgr
                         int numColumns = dgvOutputs.Columns.Count;
                         foreach (DataGridViewRow row in dgvOutputs.Rows)
                         {
-                            //int counter = 1;
-
-                            string line = "";
-                            // if (counter > 1)
-                            //{
+                           string line = "";
                                 for (int i = 0; i < numColumns; i++)
                                 {
                                     string val = row.Cells[i].Value?.ToString() + ",";
@@ -709,12 +745,10 @@ namespace HMS_Desktop_Mgr
                                     myStream.WriteLine(line);
                                 }
                             }
-                            //}
                             counter++;
                         }
                     }
                     myStream.Close();
-                //}
             }
         }
 
