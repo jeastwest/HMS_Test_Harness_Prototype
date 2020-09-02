@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkflowNavigator));
             this.lnkPrecipExtract = new System.Windows.Forms.LinkLabel();
             this.lblPrecipitationDataComparison = new System.Windows.Forms.LinkLabel();
             this.lblPrecipNavigation = new System.Windows.Forms.Label();
@@ -85,9 +86,10 @@
             this.Controls.Add(this.lblPrecipNavigation);
             this.Controls.Add(this.lblPrecipitationDataComparison);
             this.Controls.Add(this.lnkPrecipExtract);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "WorkflowNavigator";
-            this.Text = "WorkflowNavigator";
+            this.Text = "Workflow Navigator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

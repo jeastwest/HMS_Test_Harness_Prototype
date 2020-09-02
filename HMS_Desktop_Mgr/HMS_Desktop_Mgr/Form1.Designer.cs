@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlLatLng = new System.Windows.Forms.Panel();
             this.lblLongitude = new System.Windows.Forms.Label();
             this.lblLatitude = new System.Windows.Forms.Label();
@@ -458,7 +459,7 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(1149, 744);
+            this.btnSaveData.Location = new System.Drawing.Point(1103, 731);
             this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveData.Name = "btnSaveData";
             this.btnSaveData.Size = new System.Drawing.Size(184, 45);
@@ -507,7 +508,7 @@
             // 
             // txtInputRequest
             // 
-            this.txtInputRequest.Location = new System.Drawing.Point(17, 584);
+            this.txtInputRequest.Location = new System.Drawing.Point(17, 572);
             this.txtInputRequest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInputRequest.Name = "txtInputRequest";
             this.txtInputRequest.Size = new System.Drawing.Size(569, 204);
@@ -517,7 +518,7 @@
             // lblInputRequest
             // 
             this.lblInputRequest.AutoSize = true;
-            this.lblInputRequest.Location = new System.Drawing.Point(241, 571);
+            this.lblInputRequest.Location = new System.Drawing.Point(240, 558);
             this.lblInputRequest.Name = "lblInputRequest";
             this.lblInputRequest.Size = new System.Drawing.Size(110, 20);
             this.lblInputRequest.TabIndex = 21;
@@ -599,7 +600,7 @@
             // 
             // btnSaveInputData
             // 
-            this.btnSaveInputData.Location = new System.Drawing.Point(732, 744);
+            this.btnSaveInputData.Location = new System.Drawing.Point(656, 731);
             this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveInputData.Name = "btnSaveInputData";
             this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
@@ -610,7 +611,7 @@
             // 
             // btnSaveMetaData
             // 
-            this.btnSaveMetaData.Location = new System.Drawing.Point(937, 744);
+            this.btnSaveMetaData.Location = new System.Drawing.Point(881, 731);
             this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveMetaData.Name = "btnSaveMetaData";
             this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
@@ -662,9 +663,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ddlModules);
             this.Controls.Add(this.pnlLatLng);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "HMS Test Harness";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlLatLng.ResumeLayout(false);
             this.pnlLatLng.PerformLayout();

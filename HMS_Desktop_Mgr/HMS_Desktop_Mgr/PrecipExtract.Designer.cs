@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrecipExtract));
             this.txtStationID = new System.Windows.Forms.TextBox();
             this.txtStartDate = new System.Windows.Forms.TextBox();
             this.txtEndDate = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.btnSaveMetaData = new System.Windows.Forms.Button();
             this.btnSaveInputData = new System.Windows.Forms.Button();
             this.btnSaveData = new System.Windows.Forms.Button();
-            this.lblWarning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecipExtractOutputs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,23 +213,11 @@
             this.btnSaveData.UseVisualStyleBackColor = true;
             this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(10, 535);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(641, 20);
-            this.lblWarning.TabIndex = 32;
-            this.lblWarning.Text = "WARNING: Buttons \"Save Input Data\" and \"Save Meta Data\" are currently non-functio" +
-    "nal";
-            // 
             // PrecipExtract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
-            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.btnSaveMetaData);
             this.Controls.Add(this.btnSaveInputData);
             this.Controls.Add(this.btnSaveData);
@@ -247,9 +235,10 @@
             this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.txtStationID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PrecipExtract";
-            this.Text = "PrecipExtract";
+            this.Text = "Precipitation Extraction Workflow";
             this.Load += new System.EventHandler(this.PrecipExtract_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecipExtractOutputs)).EndInit();
             this.ResumeLayout(false);
@@ -276,6 +265,5 @@
         private System.Windows.Forms.Button btnSaveMetaData;
         private System.Windows.Forms.Button btnSaveInputData;
         private System.Windows.Forms.Button btnSaveData;
-        private System.Windows.Forms.Label lblWarning;
     }
 }

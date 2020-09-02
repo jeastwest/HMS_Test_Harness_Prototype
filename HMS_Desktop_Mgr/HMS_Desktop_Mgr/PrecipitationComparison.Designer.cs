@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrecipitationComparison));
             this.btnNHDplusCOMID = new System.Windows.Forms.RadioButton();
             this.lblLocation = new System.Windows.Forms.Label();
             this.pnlLocation = new System.Windows.Forms.Panel();
@@ -458,7 +459,7 @@
             // 
             // btnSaveMetaData
             // 
-            this.btnSaveMetaData.Location = new System.Drawing.Point(1200, 491);
+            this.btnSaveMetaData.Location = new System.Drawing.Point(1245, 491);
             this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveMetaData.Name = "btnSaveMetaData";
             this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
@@ -469,7 +470,7 @@
             // 
             // btnSaveInputData
             // 
-            this.btnSaveInputData.Location = new System.Drawing.Point(1200, 407);
+            this.btnSaveInputData.Location = new System.Drawing.Point(1245, 407);
             this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveInputData.Name = "btnSaveInputData";
             this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
@@ -480,7 +481,7 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(1200, 582);
+            this.btnSaveData.Location = new System.Drawing.Point(1245, 570);
             this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveData.Name = "btnSaveData";
             this.btnSaveData.Size = new System.Drawing.Size(184, 45);
@@ -508,9 +509,10 @@
             this.Controls.Add(this.pnlDataSources);
             this.Controls.Add(this.pnlTemporal);
             this.Controls.Add(this.pnlLocation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PrecipitationComparison";
-            this.Text = "PrecipitationComparison";
+            this.Text = "Precipitation Comparison Workflow";
             this.Load += new System.EventHandler(this.PrecipitationComparison_Load);
             this.pnlLocation.ResumeLayout(false);
             this.pnlLocation.PerformLayout();

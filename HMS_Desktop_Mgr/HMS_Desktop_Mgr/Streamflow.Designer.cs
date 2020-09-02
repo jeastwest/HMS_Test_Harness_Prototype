@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Streamflow));
             this.pnlAlgorithm = new System.Windows.Forms.Panel();
             this.txtAlgorithm = new System.Windows.Forms.Label();
             this.ddlAlgorithm = new System.Windows.Forms.ComboBox();
@@ -59,7 +60,6 @@
             this.btnSaveMetaData = new System.Windows.Forms.Button();
             this.btnSaveInputData = new System.Windows.Forms.Button();
             this.btnSaveData = new System.Windows.Forms.Button();
-            this.lblWarning = new System.Windows.Forms.Label();
             this.pnlAlgorithm.SuspendLayout();
             this.pnlTemporalResolution.SuspendLayout();
             this.pnlTimeSpan.SuspendLayout();
@@ -73,15 +73,15 @@
             this.pnlAlgorithm.Controls.Add(this.txtAlgorithm);
             this.pnlAlgorithm.Controls.Add(this.ddlAlgorithm);
             this.pnlAlgorithm.Location = new System.Drawing.Point(15, 85);
-            this.pnlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlAlgorithm.Name = "pnlAlgorithm";
-            this.pnlAlgorithm.Size = new System.Drawing.Size(377, 43);
+            this.pnlAlgorithm.Size = new System.Drawing.Size(376, 43);
             this.pnlAlgorithm.TabIndex = 37;
             // 
             // txtAlgorithm
             // 
             this.txtAlgorithm.AutoSize = true;
-            this.txtAlgorithm.Location = new System.Drawing.Point(35, 11);
+            this.txtAlgorithm.Location = new System.Drawing.Point(34, 11);
             this.txtAlgorithm.Name = "txtAlgorithm";
             this.txtAlgorithm.Size = new System.Drawing.Size(136, 20);
             this.txtAlgorithm.TabIndex = 1;
@@ -91,7 +91,7 @@
             // 
             this.ddlAlgorithm.FormattingEnabled = true;
             this.ddlAlgorithm.Location = new System.Drawing.Point(230, 8);
-            this.ddlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ddlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ddlAlgorithm.Name = "ddlAlgorithm";
             this.ddlAlgorithm.Size = new System.Drawing.Size(136, 28);
             this.ddlAlgorithm.TabIndex = 0;
@@ -102,7 +102,7 @@
             this.pnlTemporalResolution.Controls.Add(this.ddlTemporalResolution);
             this.pnlTemporalResolution.Controls.Add(this.lblTemporalResolution);
             this.pnlTemporalResolution.Location = new System.Drawing.Point(15, 186);
-            this.pnlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlTemporalResolution.Name = "pnlTemporalResolution";
             this.pnlTemporalResolution.Size = new System.Drawing.Size(234, 68);
             this.pnlTemporalResolution.TabIndex = 35;
@@ -111,9 +111,9 @@
             // 
             this.ddlTemporalResolution.FormattingEnabled = true;
             this.ddlTemporalResolution.Location = new System.Drawing.Point(64, 35);
-            this.ddlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ddlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ddlTemporalResolution.Name = "ddlTemporalResolution";
-            this.ddlTemporalResolution.Size = new System.Drawing.Size(95, 28);
+            this.ddlTemporalResolution.Size = new System.Drawing.Size(96, 28);
             this.ddlTemporalResolution.TabIndex = 1;
             // 
             // lblTemporalResolution
@@ -132,15 +132,15 @@
             this.pnlTimeSpan.Controls.Add(this.label9);
             this.pnlTimeSpan.Controls.Add(this.label8);
             this.pnlTimeSpan.Location = new System.Drawing.Point(255, 186);
-            this.pnlTimeSpan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlTimeSpan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlTimeSpan.Name = "pnlTimeSpan";
-            this.pnlTimeSpan.Size = new System.Drawing.Size(290, 92);
+            this.pnlTimeSpan.Size = new System.Drawing.Size(268, 86);
             this.pnlTimeSpan.TabIndex = 33;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.Location = new System.Drawing.Point(91, 48);
-            this.txtEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndDate.Location = new System.Drawing.Point(92, 48);
+            this.txtEndDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.Size = new System.Drawing.Size(142, 26);
             this.txtEndDate.TabIndex = 3;
@@ -148,8 +148,8 @@
             // 
             // txtStartDate
             // 
-            this.txtStartDate.Location = new System.Drawing.Point(91, 9);
-            this.txtStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStartDate.Location = new System.Drawing.Point(92, 9);
+            this.txtStartDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.Size = new System.Drawing.Size(142, 26);
             this.txtStartDate.TabIndex = 2;
@@ -177,17 +177,17 @@
             // 
             this.pnlPrecipSource.Controls.Add(this.ddlPrecipSource);
             this.pnlPrecipSource.Controls.Add(this.lblPrecipSource);
-            this.pnlPrecipSource.Location = new System.Drawing.Point(15, 136);
-            this.pnlPrecipSource.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlPrecipSource.Location = new System.Drawing.Point(15, 135);
+            this.pnlPrecipSource.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlPrecipSource.Name = "pnlPrecipSource";
-            this.pnlPrecipSource.Size = new System.Drawing.Size(377, 42);
+            this.pnlPrecipSource.Size = new System.Drawing.Size(376, 42);
             this.pnlPrecipSource.TabIndex = 28;
             // 
             // ddlPrecipSource
             // 
             this.ddlPrecipSource.FormattingEnabled = true;
             this.ddlPrecipSource.Location = new System.Drawing.Point(230, 8);
-            this.ddlPrecipSource.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ddlPrecipSource.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ddlPrecipSource.Name = "ddlPrecipSource";
             this.ddlPrecipSource.Size = new System.Drawing.Size(136, 28);
             this.ddlPrecipSource.TabIndex = 1;
@@ -195,7 +195,7 @@
             // lblPrecipSource
             // 
             this.lblPrecipSource.AutoSize = true;
-            this.lblPrecipSource.Location = new System.Drawing.Point(35, 11);
+            this.lblPrecipSource.Location = new System.Drawing.Point(34, 11);
             this.lblPrecipSource.Name = "lblPrecipSource";
             this.lblPrecipSource.Size = new System.Drawing.Size(155, 20);
             this.lblPrecipSource.TabIndex = 0;
@@ -204,7 +204,7 @@
             // lblAOI
             // 
             this.lblAOI.AutoSize = true;
-            this.lblAOI.Location = new System.Drawing.Point(61, 19);
+            this.lblAOI.Location = new System.Drawing.Point(55, 18);
             this.lblAOI.Name = "lblAOI";
             this.lblAOI.Size = new System.Drawing.Size(183, 20);
             this.lblAOI.TabIndex = 30;
@@ -213,8 +213,8 @@
             // ddlAOI
             // 
             this.ddlAOI.FormattingEnabled = true;
-            this.ddlAOI.Location = new System.Drawing.Point(245, 15);
-            this.ddlAOI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ddlAOI.Location = new System.Drawing.Point(244, 15);
+            this.ddlAOI.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ddlAOI.Name = "ddlAOI";
             this.ddlAOI.Size = new System.Drawing.Size(136, 28);
             this.ddlAOI.TabIndex = 29;
@@ -222,7 +222,7 @@
             // 
             // txtCOMIDandHucID
             // 
-            this.txtCOMIDandHucID.Location = new System.Drawing.Point(245, 52);
+            this.txtCOMIDandHucID.Location = new System.Drawing.Point(244, 52);
             this.txtCOMIDandHucID.Name = "txtCOMIDandHucID";
             this.txtCOMIDandHucID.Size = new System.Drawing.Size(136, 26);
             this.txtCOMIDandHucID.TabIndex = 38;
@@ -230,7 +230,7 @@
             // lblCOMIDandHucID
             // 
             this.lblCOMIDandHucID.AutoSize = true;
-            this.lblCOMIDandHucID.Location = new System.Drawing.Point(65, 55);
+            this.lblCOMIDandHucID.Location = new System.Drawing.Point(64, 55);
             this.lblCOMIDandHucID.Name = "lblCOMIDandHucID";
             this.lblCOMIDandHucID.Size = new System.Drawing.Size(63, 20);
             this.lblCOMIDandHucID.TabIndex = 39;
@@ -238,26 +238,26 @@
             // 
             // rTxtUnformattedOutput
             // 
-            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(584, 19);
-            this.rTxtUnformattedOutput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(588, 32);
+            this.rTxtUnformattedOutput.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.rTxtUnformattedOutput.Name = "rTxtUnformattedOutput";
-            this.rTxtUnformattedOutput.Size = new System.Drawing.Size(370, 328);
+            this.rTxtUnformattedOutput.Size = new System.Drawing.Size(370, 329);
             this.rTxtUnformattedOutput.TabIndex = 41;
             this.rTxtUnformattedOutput.Text = "";
             // 
             // rTxtRequestBody
             // 
             this.rTxtRequestBody.Location = new System.Drawing.Point(14, 355);
-            this.rTxtRequestBody.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rTxtRequestBody.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.rTxtRequestBody.Name = "rTxtRequestBody";
-            this.rTxtRequestBody.Size = new System.Drawing.Size(531, 179);
+            this.rTxtRequestBody.Size = new System.Drawing.Size(530, 229);
             this.rTxtRequestBody.TabIndex = 40;
             this.rTxtRequestBody.Text = "";
             // 
             // lblRequestBody
             // 
             this.lblRequestBody.AutoSize = true;
-            this.lblRequestBody.Location = new System.Drawing.Point(197, 340);
+            this.lblRequestBody.Location = new System.Drawing.Point(196, 340);
             this.lblRequestBody.Name = "lblRequestBody";
             this.lblRequestBody.Size = new System.Drawing.Size(110, 20);
             this.lblRequestBody.TabIndex = 42;
@@ -266,7 +266,7 @@
             // lblUnformattedOutput
             // 
             this.lblUnformattedOutput.AutoSize = true;
-            this.lblUnformattedOutput.Location = new System.Drawing.Point(706, 9);
+            this.lblUnformattedOutput.Location = new System.Drawing.Point(705, 18);
             this.lblUnformattedOutput.Name = "lblUnformattedOutput";
             this.lblUnformattedOutput.Size = new System.Drawing.Size(152, 20);
             this.lblUnformattedOutput.TabIndex = 43;
@@ -275,10 +275,10 @@
             // btnSubmitStreamflow
             // 
             this.btnSubmitStreamflow.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSubmitStreamflow.Location = new System.Drawing.Point(316, 293);
-            this.btnSubmitStreamflow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSubmitStreamflow.Location = new System.Drawing.Point(316, 292);
+            this.btnSubmitStreamflow.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSubmitStreamflow.Name = "btnSubmitStreamflow";
-            this.btnSubmitStreamflow.Size = new System.Drawing.Size(189, 39);
+            this.btnSubmitStreamflow.Size = new System.Drawing.Size(189, 38);
             this.btnSubmitStreamflow.TabIndex = 44;
             this.btnSubmitStreamflow.Text = "Submit Request";
             this.btnSubmitStreamflow.UseVisualStyleBackColor = false;
@@ -288,9 +288,9 @@
             // 
             this.pnlStreamHydrologyAlgorithm.Controls.Add(this.ddlStreamHydrologyAlgorithm);
             this.pnlStreamHydrologyAlgorithm.Controls.Add(this.lblStreamHydrologyAlgorithm);
-            this.pnlStreamHydrologyAlgorithm.Location = new System.Drawing.Point(14, 261);
+            this.pnlStreamHydrologyAlgorithm.Location = new System.Drawing.Point(14, 262);
             this.pnlStreamHydrologyAlgorithm.Name = "pnlStreamHydrologyAlgorithm";
-            this.pnlStreamHydrologyAlgorithm.Size = new System.Drawing.Size(235, 78);
+            this.pnlStreamHydrologyAlgorithm.Size = new System.Drawing.Size(236, 78);
             this.pnlStreamHydrologyAlgorithm.TabIndex = 45;
             // 
             // ddlStreamHydrologyAlgorithm
@@ -304,7 +304,7 @@
             // lblStreamHydrologyAlgorithm
             // 
             this.lblStreamHydrologyAlgorithm.AutoSize = true;
-            this.lblStreamHydrologyAlgorithm.Location = new System.Drawing.Point(10, 13);
+            this.lblStreamHydrologyAlgorithm.Location = new System.Drawing.Point(10, 12);
             this.lblStreamHydrologyAlgorithm.Name = "lblStreamHydrologyAlgorithm";
             this.lblStreamHydrologyAlgorithm.Size = new System.Drawing.Size(210, 20);
             this.lblStreamHydrologyAlgorithm.TabIndex = 0;
@@ -313,17 +313,17 @@
             // dgvOutputs
             // 
             this.dgvOutputs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOutputs.Location = new System.Drawing.Point(978, 19);
+            this.dgvOutputs.Location = new System.Drawing.Point(978, 32);
             this.dgvOutputs.Name = "dgvOutputs";
             this.dgvOutputs.RowHeadersWidth = 62;
             this.dgvOutputs.RowTemplate.Height = 28;
-            this.dgvOutputs.Size = new System.Drawing.Size(400, 511);
+            this.dgvOutputs.Size = new System.Drawing.Size(766, 551);
             this.dgvOutputs.TabIndex = 46;
             // 
             // lblDgvOutputs
             // 
             this.lblDgvOutputs.AutoSize = true;
-            this.lblDgvOutputs.Location = new System.Drawing.Point(1161, 9);
+            this.lblDgvOutputs.Location = new System.Drawing.Point(1342, 18);
             this.lblDgvOutputs.Name = "lblDgvOutputs";
             this.lblDgvOutputs.Size = new System.Drawing.Size(87, 20);
             this.lblDgvOutputs.TabIndex = 47;
@@ -331,8 +331,8 @@
             // 
             // btnSaveMetaData
             // 
-            this.btnSaveMetaData.Location = new System.Drawing.Point(774, 389);
-            this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveMetaData.Location = new System.Drawing.Point(661, 456);
+            this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSaveMetaData.Name = "btnSaveMetaData";
             this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
             this.btnSaveMetaData.TabIndex = 50;
@@ -342,8 +342,8 @@
             // 
             // btnSaveInputData
             // 
-            this.btnSaveInputData.Location = new System.Drawing.Point(571, 389);
-            this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveInputData.Location = new System.Drawing.Point(661, 390);
+            this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSaveInputData.Name = "btnSaveInputData";
             this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
             this.btnSaveInputData.TabIndex = 49;
@@ -353,8 +353,8 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(662, 442);
-            this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveData.Location = new System.Drawing.Point(661, 527);
+            this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSaveData.Name = "btnSaveData";
             this.btnSaveData.Size = new System.Drawing.Size(184, 45);
             this.btnSaveData.TabIndex = 48;
@@ -362,22 +362,11 @@
             this.btnSaveData.UseVisualStyleBackColor = true;
             this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(567, 513);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(332, 40);
-            this.lblWarning.TabIndex = 51;
-            this.lblWarning.Text = "WARNING: All save buttons and \"Data Table\"\r\nare currently non-functional.";
-            // 
             // Streamflow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1390, 562);
-            this.Controls.Add(this.lblWarning);
+            this.ClientSize = new System.Drawing.Size(1756, 595);
             this.Controls.Add(this.btnSaveMetaData);
             this.Controls.Add(this.btnSaveInputData);
             this.Controls.Add(this.btnSaveData);
@@ -397,7 +386,8 @@
             this.Controls.Add(this.pnlPrecipSource);
             this.Controls.Add(this.lblAOI);
             this.Controls.Add(this.ddlAOI);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "Streamflow";
             this.Text = "Streamflow";
             this.Load += new System.EventHandler(this.Streamflow_Load);
@@ -449,6 +439,5 @@
         private System.Windows.Forms.Button btnSaveMetaData;
         private System.Windows.Forms.Button btnSaveInputData;
         private System.Windows.Forms.Button btnSaveData;
-        private System.Windows.Forms.Label lblWarning;
     }
 }

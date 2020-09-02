@@ -33,7 +33,7 @@ namespace HMS_Desktop_Mgr
         You must select a module from the drop down list to continue.
         */
         {
-            this.Size = new Size(1000, 625);
+            this.Size = new Size(915, 555);
             ddlModules.DataSource = Enum.GetValues(typeof(Globals.moduleList));
             ddlAOI.Visible = false;
             ddlSource.Visible = false;
@@ -289,6 +289,7 @@ namespace HMS_Desktop_Mgr
         private void clearDataViews() 
         {
             lblError.Text = "";
+            txtInputRequest.Text = "";
             txtOutputs.Text = "";
             dgvOutputs.DataSource = null;
         }
