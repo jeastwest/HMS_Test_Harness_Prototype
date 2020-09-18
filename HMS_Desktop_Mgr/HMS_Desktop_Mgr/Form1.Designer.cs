@@ -35,7 +35,7 @@
             this.txtLongitude = new System.Windows.Forms.TextBox();
             this.txtLatitude = new System.Windows.Forms.TextBox();
             this.ddlModules = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblModules = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ddlAOI = new System.Windows.Forms.ComboBox();
@@ -85,6 +85,10 @@
             this.btnSaveInputData = new System.Windows.Forms.Button();
             this.btnSaveMetaData = new System.Windows.Forms.Button();
             this.lnkWorkFlows = new System.Windows.Forms.LinkLabel();
+            this.hlpModules = new System.Windows.Forms.LinkLabel();
+            this.btnImportInput = new System.Windows.Forms.Button();
+            this.btnSumbitCustomInput = new System.Windows.Forms.Button();
+            this.chkCustomRequestInput = new System.Windows.Forms.CheckBox();
             this.pnlLatLng.SuspendLayout();
             this.pnlCOMID.SuspendLayout();
             this.pnlStationID.SuspendLayout();
@@ -132,20 +136,22 @@
             // 
             // txtLongitude
             // 
+            this.txtLongitude.BackColor = System.Drawing.SystemColors.Window;
             this.txtLongitude.Location = new System.Drawing.Point(413, 10);
             this.txtLongitude.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLongitude.Name = "txtLongitude";
             this.txtLongitude.Size = new System.Drawing.Size(137, 26);
-            this.txtLongitude.TabIndex = 1;
+            this.txtLongitude.TabIndex = 4;
             this.txtLongitude.Text = "-83.356893";
             // 
             // txtLatitude
             // 
+            this.txtLatitude.BackColor = System.Drawing.SystemColors.Window;
             this.txtLatitude.Location = new System.Drawing.Point(115, 10);
             this.txtLatitude.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLatitude.Name = "txtLatitude";
             this.txtLatitude.Size = new System.Drawing.Size(148, 26);
-            this.txtLatitude.TabIndex = 0;
+            this.txtLatitude.TabIndex = 3;
             this.txtLatitude.Text = "33.925575";
             // 
             // ddlModules
@@ -155,17 +161,17 @@
             this.ddlModules.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlModules.Name = "ddlModules";
             this.ddlModules.Size = new System.Drawing.Size(224, 28);
-            this.ddlModules.TabIndex = 1;
+            this.ddlModules.TabIndex = 0;
             this.ddlModules.SelectedIndexChanged += new System.EventHandler(this.moduleSelection);
             // 
-            // label1
+            // lblModules
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Select a Module";
+            this.lblModules.AutoSize = true;
+            this.lblModules.Location = new System.Drawing.Point(30, 55);
+            this.lblModules.Name = "lblModules";
+            this.lblModules.Size = new System.Drawing.Size(123, 20);
+            this.lblModules.TabIndex = 1;
+            this.lblModules.Text = "Select a Module";
             // 
             // textBox1
             // 
@@ -187,8 +193,8 @@
             this.ddlAOI.Location = new System.Drawing.Point(244, 102);
             this.ddlAOI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlAOI.Name = "ddlAOI";
-            this.ddlAOI.Size = new System.Drawing.Size(136, 28);
-            this.ddlAOI.TabIndex = 3;
+            this.ddlAOI.Size = new System.Drawing.Size(166, 28);
+            this.ddlAOI.TabIndex = 1;
             this.ddlAOI.SelectedIndexChanged += new System.EventHandler(this.ddlAOI_SelectedIndexChanged);
             // 
             // lblAOI
@@ -197,7 +203,7 @@
             this.lblAOI.Location = new System.Drawing.Point(60, 106);
             this.lblAOI.Name = "lblAOI";
             this.lblAOI.Size = new System.Drawing.Size(183, 20);
-            this.lblAOI.TabIndex = 4;
+            this.lblAOI.TabIndex = 3;
             this.lblAOI.Text = "Area of Interest Options:";
             // 
             // lblCOMID
@@ -215,7 +221,7 @@
             this.txtCOMID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCOMID.Name = "txtCOMID";
             this.txtCOMID.Size = new System.Drawing.Size(112, 26);
-            this.txtCOMID.TabIndex = 6;
+            this.txtCOMID.TabIndex = 5;
             this.txtCOMID.Text = "22076143";
             // 
             // pnlCOMID
@@ -244,7 +250,7 @@
             this.txtStationID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStationID.Name = "txtStationID";
             this.txtStationID.Size = new System.Drawing.Size(181, 26);
-            this.txtStationID.TabIndex = 1;
+            this.txtStationID.TabIndex = 6;
             this.txtStationID.Text = "GHCND:USW00013874";
             // 
             // lblStationID
@@ -273,7 +279,7 @@
             this.ddlSource.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlSource.Name = "ddlSource";
             this.ddlSource.Size = new System.Drawing.Size(136, 28);
-            this.ddlSource.TabIndex = 1;
+            this.ddlSource.TabIndex = 7;
             // 
             // lblSource
             // 
@@ -302,7 +308,7 @@
             this.txtEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.Size = new System.Drawing.Size(142, 26);
-            this.txtEndDate.TabIndex = 3;
+            this.txtEndDate.TabIndex = 10;
             this.txtEndDate.Text = "2015-01-31";
             // 
             // txtStartDate
@@ -311,7 +317,7 @@
             this.txtStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.Size = new System.Drawing.Size(142, 26);
-            this.txtStartDate.TabIndex = 2;
+            this.txtStartDate.TabIndex = 9;
             this.txtStartDate.Text = "2015-01-01";
             // 
             // label9
@@ -358,7 +364,7 @@
             this.ddlOutputDataFormat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlOutputDataFormat.Name = "ddlOutputDataFormat";
             this.ddlOutputDataFormat.Size = new System.Drawing.Size(93, 28);
-            this.ddlOutputDataFormat.TabIndex = 1;
+            this.ddlOutputDataFormat.TabIndex = 11;
             // 
             // pnlTemporalResolution
             // 
@@ -377,7 +383,7 @@
             this.ddlTemporalResolution.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlTemporalResolution.Name = "ddlTemporalResolution";
             this.ddlTemporalResolution.Size = new System.Drawing.Size(95, 28);
-            this.ddlTemporalResolution.TabIndex = 1;
+            this.ddlTemporalResolution.TabIndex = 12;
             // 
             // lblTemporalResolution
             // 
@@ -405,7 +411,7 @@
             this.ddlTimeZone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlTimeZone.Name = "ddlTimeZone";
             this.ddlTimeZone.Size = new System.Drawing.Size(136, 28);
-            this.ddlTimeZone.TabIndex = 1;
+            this.ddlTimeZone.TabIndex = 8;
             // 
             // lblTimeZone
             // 
@@ -419,11 +425,11 @@
             // btnSubmitPrecip
             // 
             this.btnSubmitPrecip.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSubmitPrecip.Location = new System.Drawing.Point(212, 497);
+            this.btnSubmitPrecip.Location = new System.Drawing.Point(405, 503);
             this.btnSubmitPrecip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmitPrecip.Name = "btnSubmitPrecip";
-            this.btnSubmitPrecip.Size = new System.Drawing.Size(162, 36);
-            this.btnSubmitPrecip.TabIndex = 13;
+            this.btnSubmitPrecip.Size = new System.Drawing.Size(173, 49);
+            this.btnSubmitPrecip.TabIndex = 15;
             this.btnSubmitPrecip.Text = "Submit Request";
             this.btnSubmitPrecip.UseVisualStyleBackColor = false;
             this.btnSubmitPrecip.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -472,7 +478,7 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(14, 11);
+            this.lblError.Location = new System.Drawing.Point(589, 9);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 20);
             this.lblError.TabIndex = 17;
@@ -503,7 +509,7 @@
             this.ddlAlgorithm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlAlgorithm.Name = "ddlAlgorithm";
             this.ddlAlgorithm.Size = new System.Drawing.Size(136, 28);
-            this.ddlAlgorithm.TabIndex = 0;
+            this.ddlAlgorithm.TabIndex = 2;
             this.ddlAlgorithm.SelectedIndexChanged += new System.EventHandler(this.ddlAlgorithm_SelectedIndexChanged);
             // 
             // txtInputRequest
@@ -568,7 +574,7 @@
             this.ddlLayerDepth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ddlLayerDepth.Name = "ddlLayerDepth";
             this.ddlLayerDepth.Size = new System.Drawing.Size(134, 28);
-            this.ddlLayerDepth.TabIndex = 0;
+            this.ddlLayerDepth.TabIndex = 13;
             // 
             // pnlAlbedo
             // 
@@ -586,7 +592,7 @@
             this.txtAlbedo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAlbedo.Name = "txtAlbedo";
             this.txtAlbedo.Size = new System.Drawing.Size(112, 26);
-            this.txtAlbedo.TabIndex = 1;
+            this.txtAlbedo.TabIndex = 14;
             this.txtAlbedo.Text = "0.23";
             // 
             // lblAlbedo
@@ -623,19 +629,72 @@
             // lnkWorkFlows
             // 
             this.lnkWorkFlows.AutoSize = true;
-            this.lnkWorkFlows.Location = new System.Drawing.Point(208, 11);
+            this.lnkWorkFlows.Location = new System.Drawing.Point(123, 14);
             this.lnkWorkFlows.Name = "lnkWorkFlows";
             this.lnkWorkFlows.Size = new System.Drawing.Size(142, 20);
-            this.lnkWorkFlows.TabIndex = 29;
+            this.lnkWorkFlows.TabIndex = 0;
             this.lnkWorkFlows.TabStop = true;
             this.lnkWorkFlows.Text = "Click for Workflows";
             this.lnkWorkFlows.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkWorkFlows_LinkClicked_1);
+            // 
+            // hlpModules
+            // 
+            this.hlpModules.ActiveLinkColor = System.Drawing.Color.White;
+            this.hlpModules.AutoSize = true;
+            this.hlpModules.BackColor = System.Drawing.Color.Blue;
+            this.hlpModules.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hlpModules.LinkColor = System.Drawing.Color.White;
+            this.hlpModules.Location = new System.Drawing.Point(453, 55);
+            this.hlpModules.Name = "hlpModules";
+            this.hlpModules.Size = new System.Drawing.Size(20, 22);
+            this.hlpModules.TabIndex = 30;
+            this.hlpModules.TabStop = true;
+            this.hlpModules.Text = "?";
+            this.hlpModules.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hlpModules_LinkClicked);
+            // 
+            // btnImportInput
+            // 
+            this.btnImportInput.BackColor = System.Drawing.SystemColors.Info;
+            this.btnImportInput.Location = new System.Drawing.Point(34, 499);
+            this.btnImportInput.Name = "btnImportInput";
+            this.btnImportInput.Size = new System.Drawing.Size(159, 53);
+            this.btnImportInput.TabIndex = 31;
+            this.btnImportInput.Text = "Import Request From .txt File";
+            this.btnImportInput.UseVisualStyleBackColor = false;
+            this.btnImportInput.Click += new System.EventHandler(this.btnImportInput_Click);
+            // 
+            // btnSumbitCustomInput
+            // 
+            this.btnSumbitCustomInput.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSumbitCustomInput.Location = new System.Drawing.Point(222, 499);
+            this.btnSumbitCustomInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSumbitCustomInput.Name = "btnSumbitCustomInput";
+            this.btnSumbitCustomInput.Size = new System.Drawing.Size(162, 57);
+            this.btnSumbitCustomInput.TabIndex = 32;
+            this.btnSumbitCustomInput.Text = "Submit Custom Request";
+            this.btnSumbitCustomInput.UseVisualStyleBackColor = false;
+            this.btnSumbitCustomInput.Click += new System.EventHandler(this.btnSumbitCustomInput_Click);
+            // 
+            // chkCustomRequestInput
+            // 
+            this.chkCustomRequestInput.AutoSize = true;
+            this.chkCustomRequestInput.Location = new System.Drawing.Point(321, 13);
+            this.chkCustomRequestInput.Name = "chkCustomRequestInput";
+            this.chkCustomRequestInput.Size = new System.Drawing.Size(196, 24);
+            this.chkCustomRequestInput.TabIndex = 33;
+            this.chkCustomRequestInput.Text = "Custom Request Input";
+            this.chkCustomRequestInput.UseVisualStyleBackColor = true;
+            this.chkCustomRequestInput.CheckedChanged += new System.EventHandler(this.chkCustomRequestInput_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 804);
+            this.Controls.Add(this.chkCustomRequestInput);
+            this.Controls.Add(this.btnSumbitCustomInput);
+            this.Controls.Add(this.btnImportInput);
+            this.Controls.Add(this.hlpModules);
             this.Controls.Add(this.lnkWorkFlows);
             this.Controls.Add(this.btnSaveMetaData);
             this.Controls.Add(this.btnSaveInputData);
@@ -660,13 +719,13 @@
             this.Controls.Add(this.pnlCOMID);
             this.Controls.Add(this.lblAOI);
             this.Controls.Add(this.ddlAOI);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblModules);
             this.Controls.Add(this.ddlModules);
             this.Controls.Add(this.pnlLatLng);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "HMS Test Harness";
+            this.Text = "Test Harness";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlLatLng.ResumeLayout(false);
             this.pnlLatLng.PerformLayout();
@@ -701,7 +760,7 @@
 
         private System.Windows.Forms.Panel pnlLatLng;
         private System.Windows.Forms.ComboBox ddlModules;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblModules;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblLongitude;
@@ -755,6 +814,10 @@
         private System.Windows.Forms.Button btnSaveInputData;
         private System.Windows.Forms.Button btnSaveMetaData;
         private System.Windows.Forms.LinkLabel lnkWorkFlows;
+        private System.Windows.Forms.LinkLabel hlpModules;
+        private System.Windows.Forms.Button btnImportInput;
+        private System.Windows.Forms.Button btnSumbitCustomInput;
+        private System.Windows.Forms.CheckBox chkCustomRequestInput;
     }
 }
 

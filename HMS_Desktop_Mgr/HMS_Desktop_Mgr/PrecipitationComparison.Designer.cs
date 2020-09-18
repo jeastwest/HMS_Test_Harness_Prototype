@@ -32,6 +32,10 @@
             this.btnNHDplusCOMID = new System.Windows.Forms.RadioButton();
             this.lblLocation = new System.Windows.Forms.Label();
             this.pnlLocation = new System.Windows.Forms.Panel();
+            this.hlpCOMIDFinder = new System.Windows.Forms.LinkLabel();
+            this.lnkNCEIFinder = new System.Windows.Forms.LinkLabel();
+            this.lnkNCEIFinder2 = new System.Windows.Forms.LinkLabel();
+            this.lnkCatchmentFinder = new System.Windows.Forms.LinkLabel();
             this.pnlStationID = new System.Windows.Forms.Panel();
             this.txtNCEIStation = new System.Windows.Forms.TextBox();
             this.lblNCEIInput = new System.Windows.Forms.Label();
@@ -58,8 +62,8 @@
             this.pnlDataSources = new System.Windows.Forms.Panel();
             this.cBoxTRMM = new System.Windows.Forms.CheckBox();
             this.cBoxGLDAS = new System.Windows.Forms.CheckBox();
-            this.cBoxNLDAS = new System.Windows.Forms.CheckBox();
             this.lblDataSources = new System.Windows.Forms.Label();
+            this.cBoxNLDAS = new System.Windows.Forms.CheckBox();
             this.rTxtRequestBody = new System.Windows.Forms.RichTextBox();
             this.rTxtUnformattedOutput = new System.Windows.Forms.RichTextBox();
             this.lblUnformattedOutput = new System.Windows.Forms.Label();
@@ -70,6 +74,8 @@
             this.btnSaveMetaData = new System.Windows.Forms.Button();
             this.btnSaveInputData = new System.Windows.Forms.Button();
             this.btnSaveData = new System.Windows.Forms.Button();
+            this.hlpNCEIStationID = new System.Windows.Forms.LinkLabel();
+            this.hlpNCEIStationID2 = new System.Windows.Forms.LinkLabel();
             this.pnlLocation.SuspendLayout();
             this.pnlStationID.SuspendLayout();
             this.pnlTemporal.SuspendLayout();
@@ -92,7 +98,7 @@
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblLocation.Location = new System.Drawing.Point(184, 0);
+            this.lblLocation.Location = new System.Drawing.Point(271, 0);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(70, 20);
             this.lblLocation.TabIndex = 1;
@@ -101,6 +107,12 @@
             // pnlLocation
             // 
             this.pnlLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLocation.Controls.Add(this.hlpNCEIStationID2);
+            this.pnlLocation.Controls.Add(this.hlpNCEIStationID);
+            this.pnlLocation.Controls.Add(this.hlpCOMIDFinder);
+            this.pnlLocation.Controls.Add(this.lnkNCEIFinder);
+            this.pnlLocation.Controls.Add(this.lnkNCEIFinder2);
+            this.pnlLocation.Controls.Add(this.lnkCatchmentFinder);
             this.pnlLocation.Controls.Add(this.pnlStationID);
             this.pnlLocation.Controls.Add(this.chkNCEIStationID);
             this.pnlLocation.Controls.Add(this.chkSpatialAverage);
@@ -111,8 +123,56 @@
             this.pnlLocation.Controls.Add(this.lblLocation);
             this.pnlLocation.Location = new System.Drawing.Point(29, 24);
             this.pnlLocation.Name = "pnlLocation";
-            this.pnlLocation.Size = new System.Drawing.Size(447, 216);
+            this.pnlLocation.Size = new System.Drawing.Size(608, 216);
             this.pnlLocation.TabIndex = 2;
+            // 
+            // hlpCOMIDFinder
+            // 
+            this.hlpCOMIDFinder.ActiveLinkColor = System.Drawing.Color.White;
+            this.hlpCOMIDFinder.AutoSize = true;
+            this.hlpCOMIDFinder.BackColor = System.Drawing.Color.Blue;
+            this.hlpCOMIDFinder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hlpCOMIDFinder.LinkColor = System.Drawing.Color.White;
+            this.hlpCOMIDFinder.Location = new System.Drawing.Point(520, 43);
+            this.hlpCOMIDFinder.Name = "hlpCOMIDFinder";
+            this.hlpCOMIDFinder.Size = new System.Drawing.Size(20, 22);
+            this.hlpCOMIDFinder.TabIndex = 11;
+            this.hlpCOMIDFinder.TabStop = true;
+            this.hlpCOMIDFinder.Text = "?";
+            this.hlpCOMIDFinder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hlpCOMIDFinder_LinkClicked);
+            // 
+            // lnkNCEIFinder
+            // 
+            this.lnkNCEIFinder.AutoSize = true;
+            this.lnkNCEIFinder.Location = new System.Drawing.Point(367, 182);
+            this.lnkNCEIFinder.Name = "lnkNCEIFinder";
+            this.lnkNCEIFinder.Size = new System.Drawing.Size(187, 20);
+            this.lnkNCEIFinder.TabIndex = 10;
+            this.lnkNCEIFinder.TabStop = true;
+            this.lnkNCEIFinder.Text = "Click to find NCEI Station";
+            this.lnkNCEIFinder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNCEIFinder_LinkClicked);
+            // 
+            // lnkNCEIFinder2
+            // 
+            this.lnkNCEIFinder2.AutoSize = true;
+            this.lnkNCEIFinder2.Location = new System.Drawing.Point(373, 132);
+            this.lnkNCEIFinder2.Name = "lnkNCEIFinder2";
+            this.lnkNCEIFinder2.Size = new System.Drawing.Size(187, 20);
+            this.lnkNCEIFinder2.TabIndex = 9;
+            this.lnkNCEIFinder2.TabStop = true;
+            this.lnkNCEIFinder2.Text = "Click to find NCEI Station";
+            this.lnkNCEIFinder2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNCEIFinder2_LinkClicked);
+            // 
+            // lnkCatchmentFinder
+            // 
+            this.lnkCatchmentFinder.AutoSize = true;
+            this.lnkCatchmentFinder.Location = new System.Drawing.Point(367, 43);
+            this.lnkCatchmentFinder.Name = "lnkCatchmentFinder";
+            this.lnkCatchmentFinder.Size = new System.Drawing.Size(147, 20);
+            this.lnkCatchmentFinder.TabIndex = 8;
+            this.lnkCatchmentFinder.TabStop = true;
+            this.lnkCatchmentFinder.Text = "Click to find COMID";
+            this.lnkCatchmentFinder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCatchmentFinder_LinkClicked);
             // 
             // pnlStationID
             // 
@@ -171,7 +231,7 @@
             // 
             // txtNHDplusCOMID
             // 
-            this.txtNHDplusCOMID.Location = new System.Drawing.Point(188, 39);
+            this.txtNHDplusCOMID.Location = new System.Drawing.Point(182, 39);
             this.txtNHDplusCOMID.Name = "txtNHDplusCOMID";
             this.txtNHDplusCOMID.Size = new System.Drawing.Size(179, 26);
             this.txtNHDplusCOMID.TabIndex = 3;
@@ -207,7 +267,7 @@
             this.pnlTemporal.Controls.Add(this.lblTemporal);
             this.pnlTemporal.Location = new System.Drawing.Point(29, 246);
             this.pnlTemporal.Name = "pnlTemporal";
-            this.pnlTemporal.Size = new System.Drawing.Size(447, 333);
+            this.pnlTemporal.Size = new System.Drawing.Size(473, 333);
             this.pnlTemporal.TabIndex = 3;
             // 
             // txtDailyPrecipThreshold
@@ -346,16 +406,17 @@
             this.pnlDataSources.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDataSources.Controls.Add(this.cBoxTRMM);
             this.pnlDataSources.Controls.Add(this.cBoxGLDAS);
+            this.pnlDataSources.Controls.Add(this.lblDataSources);
             this.pnlDataSources.Controls.Add(this.cBoxNLDAS);
             this.pnlDataSources.Location = new System.Drawing.Point(29, 585);
             this.pnlDataSources.Name = "pnlDataSources";
-            this.pnlDataSources.Size = new System.Drawing.Size(447, 60);
+            this.pnlDataSources.Size = new System.Drawing.Size(473, 60);
             this.pnlDataSources.TabIndex = 4;
             // 
             // cBoxTRMM
             // 
             this.cBoxTRMM.AutoSize = true;
-            this.cBoxTRMM.Location = new System.Drawing.Point(312, 23);
+            this.cBoxTRMM.Location = new System.Drawing.Point(351, 23);
             this.cBoxTRMM.Name = "cBoxTRMM";
             this.cBoxTRMM.Size = new System.Drawing.Size(82, 24);
             this.cBoxTRMM.TabIndex = 4;
@@ -365,36 +426,36 @@
             // cBoxGLDAS
             // 
             this.cBoxGLDAS.AutoSize = true;
-            this.cBoxGLDAS.Location = new System.Drawing.Point(173, 23);
+            this.cBoxGLDAS.Location = new System.Drawing.Point(208, 23);
             this.cBoxGLDAS.Name = "cBoxGLDAS";
             this.cBoxGLDAS.Size = new System.Drawing.Size(91, 24);
             this.cBoxGLDAS.TabIndex = 3;
             this.cBoxGLDAS.Text = "GLDAS";
             this.cBoxGLDAS.UseVisualStyleBackColor = true;
             // 
+            // lblDataSources
+            // 
+            this.lblDataSources.AutoSize = true;
+            this.lblDataSources.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblDataSources.Location = new System.Drawing.Point(184, 0);
+            this.lblDataSources.Name = "lblDataSources";
+            this.lblDataSources.Size = new System.Drawing.Size(107, 20);
+            this.lblDataSources.TabIndex = 1;
+            this.lblDataSources.Text = "Data Sources";
+            // 
             // cBoxNLDAS
             // 
             this.cBoxNLDAS.AutoSize = true;
-            this.cBoxNLDAS.Location = new System.Drawing.Point(21, 23);
+            this.cBoxNLDAS.Location = new System.Drawing.Point(62, 23);
             this.cBoxNLDAS.Name = "cBoxNLDAS";
             this.cBoxNLDAS.Size = new System.Drawing.Size(89, 24);
             this.cBoxNLDAS.TabIndex = 2;
             this.cBoxNLDAS.Text = "NLDAS";
             this.cBoxNLDAS.UseVisualStyleBackColor = true;
             // 
-            // lblDataSources
-            // 
-            this.lblDataSources.AutoSize = true;
-            this.lblDataSources.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDataSources.Location = new System.Drawing.Point(198, 582);
-            this.lblDataSources.Name = "lblDataSources";
-            this.lblDataSources.Size = new System.Drawing.Size(107, 20);
-            this.lblDataSources.TabIndex = 1;
-            this.lblDataSources.Text = "Data Sources";
-            // 
             // rTxtRequestBody
             // 
-            this.rTxtRequestBody.Location = new System.Drawing.Point(520, 34);
+            this.rTxtRequestBody.Location = new System.Drawing.Point(687, 47);
             this.rTxtRequestBody.Name = "rTxtRequestBody";
             this.rTxtRequestBody.Size = new System.Drawing.Size(431, 201);
             this.rTxtRequestBody.TabIndex = 5;
@@ -402,7 +463,7 @@
             // 
             // rTxtUnformattedOutput
             // 
-            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(974, 34);
+            this.rTxtUnformattedOutput.Location = new System.Drawing.Point(1187, 47);
             this.rTxtUnformattedOutput.Name = "rTxtUnformattedOutput";
             this.rTxtUnformattedOutput.Size = new System.Drawing.Size(428, 201);
             this.rTxtUnformattedOutput.TabIndex = 6;
@@ -411,7 +472,7 @@
             // lblUnformattedOutput
             // 
             this.lblUnformattedOutput.AutoSize = true;
-            this.lblUnformattedOutput.Location = new System.Drawing.Point(1122, 24);
+            this.lblUnformattedOutput.Location = new System.Drawing.Point(1350, 34);
             this.lblUnformattedOutput.Name = "lblUnformattedOutput";
             this.lblUnformattedOutput.Size = new System.Drawing.Size(152, 20);
             this.lblUnformattedOutput.TabIndex = 7;
@@ -420,7 +481,7 @@
             // lblRequestBody
             // 
             this.lblRequestBody.AutoSize = true;
-            this.lblRequestBody.Location = new System.Drawing.Point(677, 24);
+            this.lblRequestBody.Location = new System.Drawing.Point(861, 34);
             this.lblRequestBody.Name = "lblRequestBody";
             this.lblRequestBody.Size = new System.Drawing.Size(110, 20);
             this.lblRequestBody.TabIndex = 8;
@@ -441,17 +502,17 @@
             // dgvOutputs
             // 
             this.dgvOutputs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOutputs.Location = new System.Drawing.Point(520, 273);
+            this.dgvOutputs.Location = new System.Drawing.Point(539, 270);
             this.dgvOutputs.Name = "dgvOutputs";
             this.dgvOutputs.RowHeadersWidth = 62;
             this.dgvOutputs.RowTemplate.Height = 28;
-            this.dgvOutputs.Size = new System.Drawing.Size(628, 490);
+            this.dgvOutputs.Size = new System.Drawing.Size(893, 490);
             this.dgvOutputs.TabIndex = 14;
             // 
             // lblDataTable
             // 
             this.lblDataTable.AutoSize = true;
-            this.lblDataTable.Location = new System.Drawing.Point(770, 262);
+            this.lblDataTable.Location = new System.Drawing.Point(989, 263);
             this.lblDataTable.Name = "lblDataTable";
             this.lblDataTable.Size = new System.Drawing.Size(87, 20);
             this.lblDataTable.TabIndex = 15;
@@ -459,7 +520,7 @@
             // 
             // btnSaveMetaData
             // 
-            this.btnSaveMetaData.Location = new System.Drawing.Point(1245, 491);
+            this.btnSaveMetaData.Location = new System.Drawing.Point(1455, 447);
             this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveMetaData.Name = "btnSaveMetaData";
             this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
@@ -470,7 +531,7 @@
             // 
             // btnSaveInputData
             // 
-            this.btnSaveInputData.Location = new System.Drawing.Point(1245, 407);
+            this.btnSaveInputData.Location = new System.Drawing.Point(1455, 336);
             this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveInputData.Name = "btnSaveInputData";
             this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
@@ -481,7 +542,7 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(1245, 570);
+            this.btnSaveData.Location = new System.Drawing.Point(1455, 570);
             this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveData.Name = "btnSaveData";
             this.btnSaveData.Size = new System.Drawing.Size(184, 45);
@@ -490,14 +551,43 @@
             this.btnSaveData.UseVisualStyleBackColor = true;
             this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
+            // hlpNCEIStationID
+            // 
+            this.hlpNCEIStationID.ActiveLinkColor = System.Drawing.Color.White;
+            this.hlpNCEIStationID.AutoSize = true;
+            this.hlpNCEIStationID.BackColor = System.Drawing.Color.Blue;
+            this.hlpNCEIStationID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hlpNCEIStationID.LinkColor = System.Drawing.Color.White;
+            this.hlpNCEIStationID.Location = new System.Drawing.Point(560, 183);
+            this.hlpNCEIStationID.Name = "hlpNCEIStationID";
+            this.hlpNCEIStationID.Size = new System.Drawing.Size(20, 22);
+            this.hlpNCEIStationID.TabIndex = 12;
+            this.hlpNCEIStationID.TabStop = true;
+            this.hlpNCEIStationID.Text = "?";
+            this.hlpNCEIStationID.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hlpNCEIStationID_LinkClicked);
+            // 
+            // hlpNCEIStationID2
+            // 
+            this.hlpNCEIStationID2.ActiveLinkColor = System.Drawing.Color.White;
+            this.hlpNCEIStationID2.AutoSize = true;
+            this.hlpNCEIStationID2.BackColor = System.Drawing.Color.Blue;
+            this.hlpNCEIStationID2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hlpNCEIStationID2.LinkColor = System.Drawing.Color.White;
+            this.hlpNCEIStationID2.Location = new System.Drawing.Point(566, 132);
+            this.hlpNCEIStationID2.Name = "hlpNCEIStationID2";
+            this.hlpNCEIStationID2.Size = new System.Drawing.Size(20, 22);
+            this.hlpNCEIStationID2.TabIndex = 13;
+            this.hlpNCEIStationID2.TabStop = true;
+            this.hlpNCEIStationID2.Text = "?";
+            this.hlpNCEIStationID2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hlpNCEIStationID2_LinkClicked);
+            // 
             // PrecipitationComparison
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1486, 775);
+            this.ClientSize = new System.Drawing.Size(1681, 775);
             this.Controls.Add(this.btnSaveMetaData);
             this.Controls.Add(this.btnSaveInputData);
-            this.Controls.Add(this.lblDataSources);
             this.Controls.Add(this.btnSaveData);
             this.Controls.Add(this.lblDataTable);
             this.Controls.Add(this.dgvOutputs);
@@ -571,5 +661,11 @@
         private System.Windows.Forms.Button btnSaveMetaData;
         private System.Windows.Forms.Button btnSaveInputData;
         private System.Windows.Forms.Button btnSaveData;
+        private System.Windows.Forms.LinkLabel lnkCatchmentFinder;
+        private System.Windows.Forms.LinkLabel lnkNCEIFinder;
+        private System.Windows.Forms.LinkLabel lnkNCEIFinder2;
+        private System.Windows.Forms.LinkLabel hlpCOMIDFinder;
+        private System.Windows.Forms.LinkLabel hlpNCEIStationID2;
+        private System.Windows.Forms.LinkLabel hlpNCEIStationID;
     }
 }

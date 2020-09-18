@@ -26,6 +26,19 @@ namespace HMS_Desktop_Mgr
         private void PrecipExtract_Load_1(object sender, EventArgs e)
         {
             ddlTemporalResolution.DataSource = Enum.GetValues(typeof(Globals.TemporalResolutionMoDaily));
+            btnImportInput.Visible = false;
+            btnSumbitCustomInput.Visible = false;
+
+            //Adding tooltips
+            ToolTip PrecipExtractTooltips = new ToolTip();
+            PrecipExtractTooltips.SetToolTip(txtStationID, "Enter a NCEI Station ID");
+            PrecipExtractTooltips.SetToolTip(txtStartDate, "Enter start time for the dataset");
+            PrecipExtractTooltips.SetToolTip(txtEndDate, "Enter an end time for the dataset");
+            PrecipExtractTooltips.SetToolTip(ddlTemporalResolution, "Select a time interval for the dataset");
+            PrecipExtractTooltips.SetToolTip(btnSubmitPrecipExtract, "Click here to send the request");
+            PrecipExtractTooltips.SetToolTip(btnSaveInputData, "Click to export the request body as a .txt file");
+            PrecipExtractTooltips.SetToolTip(btnSaveMetaData, "Click to export the meta data as a .csv file");
+            PrecipExtractTooltips.SetToolTip(btnSaveData, "Click to export the data as a .csv file");
         }
 
         private void btnSubmitPrecipExtract_Click(object sender, EventArgs e)
@@ -44,6 +57,13 @@ namespace HMS_Desktop_Mgr
             {
                 Cursor.Current = Cursors.Default;
             }
+        }
+
+        private void clearDataViews()
+        {
+            rTxtRequestBody.Text = "";
+            rTxtUnformattedOutput.Text = "";
+            dgvPrecipExtractOutputs.DataSource = null;
         }
 
         private string getData()
@@ -236,6 +256,162 @@ namespace HMS_Desktop_Mgr
                     }
                 }
                 myStream.Close();
+            }
+        }
+
+        private void chkCustomRequestInput_CheckedChanged(object sender, EventArgs e)
+        {
+            clearDataViews();
+            if (chkCustomRequestInput.Checked == true)
+            {
+                pnlStandardRequest.Visible = false;
+                btnSubmitPrecipExtract.Visible = false;
+                btnImportInput.Visible = true;
+                btnSumbitCustomInput.Visible = true;
+            }
+            else
+            {
+                pnlStandardRequest.Visible = true;
+                btnSubmitPrecipExtract.Visible = true;
+                btnImportInput.Visible = false;
+                btnSumbitCustomInput.Visible = false;
+            }
+        }
+
+        private void btnImportInput_Click(object sender, EventArgs e)
+        {
+            clearDataViews();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                Title = "Browse Text Files",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "txt",
+                Filter = "txt files (*.txt)|*.txt",
+                FilterIndex = 2,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string content = null;
+                content = File.ReadAllText(openFileDialog1.FileName);
+                rTxtRequestBody.Text = content;
+
+            }
+        }
+
+        private string getDataFromCustomRequest()
+        {
+            DataTable dt = null;
+            string URL = "";
+            URL = Globals.baseURL + Globals.precipExtractURL;
+
+
+
+            var request = (HttpWebRequest)WebRequest.Create(URL);
+            request.Headers.Clear();
+            request.Method = "POST";
+            request.ContentType = @"application/json";
+            request.Accept = @"*/*";
+
+            var data = Encoding.ASCII.GetBytes(rTxtRequestBody.Text);
+            request.ContentLength = data.Length;
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+            var response = (HttpWebResponse)request.GetResponse();
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            rTxtUnformattedOutput.Text = responseString;
+
+
+            var result = JObject.Parse(responseString);
+            var items = result["data"].Children().ToList();   //Get the data section and save as a list
+            var metaItems = result["metadata"].Children().ToList();
+            DataTable dtMetaData = new DataTable();
+            dtMetaData.Columns.Add("Item");
+            dtMetaData.Columns.Add("Value");
+
+            dt = new DataTable();
+            SortedList<string, string> colSorted = new SortedList<string, string>();
+            foreach (JToken mLabel in metaItems)
+            {
+                DataRow dr = dtMetaData.NewRow();
+                metaDataForExport.Add(mLabel.ToString());
+                mLabel.ToObject<JProperty>();
+                string item = mLabel.ToObject<JProperty>().Name;
+                System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex("column_[1-9]|[10]");
+                if ((rgx.IsMatch(item)) && (item.Length < 10))
+                {
+                    dr["Item"] = item.Trim();
+                    string val = mLabel.ToObject<JProperty>().Value.ToString().Replace("\r\n", "").Replace("[ ", "").Replace("]", "").Replace("\"", "").Trim();
+                    dr["Value"] = val;
+                    dtMetaData.Rows.Add(dr);
+                    if (item.Length > 8)
+                    {
+                        item = item.Insert(7, "99");
+                    }
+                    if ((val == "DateHour") || (val == "Date"))
+                    {
+                        item = item.Insert(7, "00");
+                    }
+                    if (val == "Julian Day")
+                    {
+                        item = item.Insert(7, "00");
+                    }
+                    colSorted.Add(item.Trim(), val);
+                }
+            }
+            foreach (KeyValuePair<string, string> col in colSorted)
+            {
+                dt.Columns.Add(col.Value);
+            }
+
+            //Generating output data table 
+            foreach (JToken item in items)
+            {
+                DataRow dr = dt.NewRow();
+                item.ToObject<JProperty>();
+                string date = item.ToObject<JProperty>().Name;
+                dr[colSorted.Values[0]] = date.Trim();
+                string val = item.ToObject<JProperty>().Value.ToString().Replace("\r\n", "").Replace("[ ", "").Replace("]", "").Replace("\"", "").Trim();
+                string[] valSet = val.Split(',');
+                var valCount = valSet.Count();
+
+                for (int i = 0; i < valCount; i++)
+                {
+                    dr[colSorted.Values[i + 1]] = valSet[i];
+                }
+                dt.Rows.Add(dr);
+            }
+
+            dgvPrecipExtractOutputs.DataSource = dt.DefaultView;
+            return responseString;
+        }
+
+        private void btnSumbitCustomInput_Click(object sender, EventArgs e)
+        {
+
+            string strResponse = "";
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                strResponse = getDataFromCustomRequest();
+            }
+            catch (System.Exception ex)
+            {
+                rTxtUnformattedOutput.Text = ex.Message;
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
     }

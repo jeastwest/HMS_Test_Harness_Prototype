@@ -31,6 +31,21 @@ namespace HMS_Desktop_Mgr
             ddlPrecipSource.DataSource = Enum.GetValues(typeof(Globals.streamflowPrecipSources));
             ddlTemporalResolution.DataSource = Enum.GetValues(typeof(Globals.TemporalResultionDaily));
             ddlStreamHydrologyAlgorithm.DataSource = Enum.GetValues(typeof(Globals.StreamHydrologyAlgorithms));
+            
+            //Generating the tooltips
+            ToolTip StreamflowTooltips = new ToolTip();
+            StreamflowTooltips.SetToolTip(ddlAOI, "Select the Area of Interest");
+            StreamflowTooltips.SetToolTip(txtCOMIDandHucID, "Enter the catchment ID or HucID");
+            StreamflowTooltips.SetToolTip(ddlAlgorithm, "Select an algorithm from the list");
+            StreamflowTooltips.SetToolTip(ddlPrecipSource, "Select a precipitation source from the list");
+            StreamflowTooltips.SetToolTip(ddlTemporalResolution, "Select a time interval for the dataset");
+            StreamflowTooltips.SetToolTip(txtStartDate, "Enter start time for the dataset");
+            StreamflowTooltips.SetToolTip(txtEndDate, "Enter an end time for the dataset");
+            StreamflowTooltips.SetToolTip(ddlStreamHydrologyAlgorithm, "Select a streamflow algorithm for the dataset");
+            StreamflowTooltips.SetToolTip(btnSubmitStreamflow, "Click here to send the request");
+            StreamflowTooltips.SetToolTip(btnSaveInputData, "Click to export the request body as a .txt file");
+            StreamflowTooltips.SetToolTip(btnSaveMetaData, "Click to export the meta data as a .csv file");
+            StreamflowTooltips.SetToolTip(btnSaveData, "Click to export the data as a .csv file");
         }
 
         private void ddlAlgorithm_SelectedIndexChanged(object sender, EventArgs e)

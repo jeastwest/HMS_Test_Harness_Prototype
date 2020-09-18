@@ -24,9 +24,15 @@ namespace HMS_Desktop_Mgr
 
         private void PrecipitationComparison_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(1000, 575);
+            this.Size = new Size(1175, 575);
             pnlStationID.Visible = false;
             btnDaily.Checked = true;
+            lnkNCEIFinder2.Visible = false;
+            hlpNCEIStationID2.Visible = false;
+            ToolTip PrecipCompareTooltips = new ToolTip();
+            PrecipCompareTooltips.SetToolTip(hlpCOMIDFinder, "Click for help");
+            PrecipCompareTooltips.SetToolTip(hlpNCEIStationID, "Click for help");
+            PrecipCompareTooltips.SetToolTip(hlpNCEIStationID2, "Click for help");
         }
 
         //If checked, the function below will make the NCEI Station ID panel visible
@@ -35,10 +41,14 @@ namespace HMS_Desktop_Mgr
             if (chkNCEIStationID.Checked == true)
             {
                 pnlStationID.Visible = true;
+                lnkNCEIFinder2.Visible = true;
+                hlpNCEIStationID2.Visible = true;
             }
             else
             {
                 pnlStationID.Visible = false;
+                lnkNCEIFinder2.Visible = false;
+                hlpNCEIStationID2.Visible = false;
             }
         }
 
@@ -241,8 +251,6 @@ namespace HMS_Desktop_Mgr
                     myStream.WriteLine(rTxtRequestBody.Text);
                     myStream.Close();
                 }
-
-
             }
         }
 
@@ -309,6 +317,38 @@ namespace HMS_Desktop_Mgr
                 }
                 myStream.Close();
             }
+        }
+
+        private void lnkCatchmentFinder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            System.Diagnostics.Process.Start(@"https://epa.maps.arcgis.com/apps/webappviewer/index.html?id=ada349b90c26496ea52aab66a092593b");
+        }
+
+        private void lnkNCEIFinder2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"https://gis.ncdc.noaa.gov/maps/ncei");
+        }
+
+        private void lnkNCEIFinder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"https://gis.ncdc.noaa.gov/maps/ncei");
+        }
+
+        private void hlpCOMIDFinder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show(@"To find the COMID/CatchmentID, click on the link provided and click a stream from the map. "
+                 +"Next, click 'View in attribute table'. If you cannot view any streams, zoom in." );
+        }
+
+        private void hlpNCEIStationID_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show(@"CHANGE ME");// Change this
+        }
+
+        private void hlpNCEIStationID2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show(@"CHANGE ME");//Change this
         }
     }
 }

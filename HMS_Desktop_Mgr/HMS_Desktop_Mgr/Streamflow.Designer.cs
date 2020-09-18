@@ -38,8 +38,8 @@
             this.pnlTimeSpan = new System.Windows.Forms.Panel();
             this.txtEndDate = new System.Windows.Forms.TextBox();
             this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblEndDate = new System.Windows.Forms.Label();
             this.pnlPrecipSource = new System.Windows.Forms.Panel();
             this.ddlPrecipSource = new System.Windows.Forms.ComboBox();
             this.lblPrecipSource = new System.Windows.Forms.Label();
@@ -129,8 +129,8 @@
             // 
             this.pnlTimeSpan.Controls.Add(this.txtEndDate);
             this.pnlTimeSpan.Controls.Add(this.txtStartDate);
-            this.pnlTimeSpan.Controls.Add(this.label9);
-            this.pnlTimeSpan.Controls.Add(this.label8);
+            this.pnlTimeSpan.Controls.Add(this.lblStartDate);
+            this.pnlTimeSpan.Controls.Add(this.lblEndDate);
             this.pnlTimeSpan.Location = new System.Drawing.Point(255, 186);
             this.pnlTimeSpan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlTimeSpan.Name = "pnlTimeSpan";
@@ -155,23 +155,23 @@
             this.txtStartDate.TabIndex = 2;
             this.txtStartDate.Text = "2015-01-01";
             // 
-            // label9
+            // lblStartDate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Start Date:";
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Location = new System.Drawing.Point(3, 9);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(87, 20);
+            this.lblStartDate.TabIndex = 1;
+            this.lblStartDate.Text = "Start Date:";
             // 
-            // label8
+            // lblEndDate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "End Date:";
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Location = new System.Drawing.Point(5, 51);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(81, 20);
+            this.lblEndDate.TabIndex = 0;
+            this.lblEndDate.Text = "End Date:";
             // 
             // pnlPrecipSource
             // 
@@ -331,7 +331,7 @@
             // 
             // btnSaveMetaData
             // 
-            this.btnSaveMetaData.Location = new System.Drawing.Point(661, 456);
+            this.btnSaveMetaData.Location = new System.Drawing.Point(661, 461);
             this.btnSaveMetaData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSaveMetaData.Name = "btnSaveMetaData";
             this.btnSaveMetaData.Size = new System.Drawing.Size(184, 45);
@@ -342,7 +342,7 @@
             // 
             // btnSaveInputData
             // 
-            this.btnSaveInputData.Location = new System.Drawing.Point(661, 390);
+            this.btnSaveInputData.Location = new System.Drawing.Point(661, 406);
             this.btnSaveInputData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSaveInputData.Name = "btnSaveInputData";
             this.btnSaveInputData.Size = new System.Drawing.Size(184, 45);
@@ -353,7 +353,7 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(661, 527);
+            this.btnSaveData.Location = new System.Drawing.Point(661, 516);
             this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSaveData.Name = "btnSaveData";
             this.btnSaveData.Size = new System.Drawing.Size(184, 45);
@@ -417,8 +417,8 @@
         private System.Windows.Forms.Panel pnlTimeSpan;
         private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.TextBox txtStartDate;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Panel pnlPrecipSource;
         private System.Windows.Forms.ComboBox ddlPrecipSource;
         private System.Windows.Forms.Label lblPrecipSource;

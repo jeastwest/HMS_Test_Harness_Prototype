@@ -10,10 +10,10 @@ namespace HMS_Desktop_Mgr
 {
     class Globals
     {
-        public enum moduleList { Precipitation,Air_Temperature,Relative_Humidity,Dew_Point,Solar_Radiation,Wind,Surface_Runoff,Subsurface_Flow,Soil_Moisture,Evapotranspiration };
+        public enum moduleList { Precipitation,Air_Temperature,Relative_Humidity,Dew_Point,Solar_Radiation,Wind,Surface_Runoff,Subsurface_Flow,Soil_Moisture,Evapotranspiration }
         public enum runoffAndFlowAlgorithms { nldas,gldas,curvenumber }
         public enum evapotranspirationAlgorithms { nldas,gldas,hamon,penmandaily,hargreaves }
-        public enum everyAOI { LatitudeLongitude,COMID,NCEI_Station };
+        public enum everyAOI { LatitudeLongitude,COMID,NCEI_Station }
         public enum pointAndCOMIDAOI { LatitudeLongitude,COMID }
         public enum streamflowAOI { COMID,HucID }
         public enum precipSources { nldas,gldas,daymet,wgen,prism,ncei,trmm }
@@ -37,7 +37,7 @@ namespace HMS_Desktop_Mgr
         public static string baseURL = @"https://ceamdev.ceeopdev.net/hms/rest/api/";
 
         //Staging Server 
-        //public static string baseURL = @"https://ceamstg.ceeopdev.net/hms/rest/api/";
+       // public static string baseURL = @"https://ceamstg.ceeopdev.net/hms/rest/api/";
 
         public static string precipitaionURL = @"meteorology/precipitation/";
         public static string temperatureURL = @"hydrology/temperature/";
